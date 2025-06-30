@@ -1,5 +1,6 @@
 /__pycache__
-/test_cases/Oresund/data
+/input
+/output
 .venv
 
 # UV stuff

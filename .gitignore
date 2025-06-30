@@ -1,0 +1,10 @@
+/__pycache__
+/test_cases/Oresund/data
+.venv
+
+# UV stuff
+pyproject.toml
+.python-version
+uv.lock
+
+

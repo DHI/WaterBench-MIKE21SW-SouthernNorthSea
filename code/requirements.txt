@@ -1,0 +1,9 @@
+matplotlib==3.10.1
+mikecore==0.2.2
+mikeio==2.4.0
+modelskill==1.2.0
+scipy==1.15.2
+numpy==2.2.4
+pandas==2.2.3
+xarray==2025.3.0
+ipykernel==6.29.5

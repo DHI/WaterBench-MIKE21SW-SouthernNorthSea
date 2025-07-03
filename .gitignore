@@ -8,4 +8,7 @@ pyproject.toml
 .python-version
 uv.lock
 
+.preprocessing
+copernicus-data
+
 

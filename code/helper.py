@@ -8,6 +8,22 @@ obs_fldr = "../observations/"
 df_stn = pd.read_csv(obs_fldr + "stations.csv", index_col=0)
 df_stn_cur = pd.read_csv(obs_fldr + "current_stations.csv", index_col=0)
 
+def get_wh_point_obs():
+    """Get wave height point observations as list of PointObservation objects"""
+    q = ms.Quantity(name="Significant Wave Height", unit="meter")
+    whlist = []
+
+    for i, row in df_stn.iterrows():
+        df = pd.read_csv(obs_fldr + f"{i}_wh.csv", index_col=0)
+        df.index = pd.to_datetime(df.index, format="ISO8601")
+        o = ms.PointObservation(df.wave_height_filtered, x=row['Longitude'], y=row['Latitude'], name=i, quantity=q)
+        whlist.append(o)
+
+    return whlist
+
+
+
+
 def get_wl_point_obs():
     """Get water level point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Surface Elevation", unit="meter")

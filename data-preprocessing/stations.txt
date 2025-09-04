@@ -1,4 +1,9 @@
-6202108
+6200145
+6200293
+6201045
+6201050
+6201058
+A121
 AkkaertSouthwestBuoy
 Europlatform2
 Europlatform3

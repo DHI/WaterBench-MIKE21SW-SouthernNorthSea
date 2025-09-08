@@ -15,3 +15,5 @@ raw-data
 observations_HD
 litt
 
+# Notebook for downloading altimetry data
+download_altimetry_data.ipynb

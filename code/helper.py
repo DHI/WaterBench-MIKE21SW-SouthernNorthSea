@@ -3,7 +3,6 @@ from pathlib import Path
 import warnings
 import pandas as pd
 import modelskill as ms
-import matplotlib.pyplot as plt
 
 obs_fldr = "../observations/" 
 alt_fldr = "../observations/altimetry/"
@@ -45,6 +44,26 @@ def get_tp_point_obs(station_file):
             tplist.append(o)
     return tplist
 
+def get_mdir_point_obs(station_file):
+    """Get wave period point observations as list of PointObservation objects"""
+    q = ms.Quantity(name="Mean wave direction", unit="degree")
+    mdirlist = []
+
+    df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)
+
+    for i, row in df_stn.iterrows():
+            if not Path(obs_fldr + f"{i}.csv").exists():
+                continue
+            df = pd.read_csv(obs_fldr + f"{i}.csv", index_col=0)
+            df.index = pd.to_datetime(df.index, format="ISO8601")
+            # Check is VMDR column exists
+            if 'VMDR' not in df.columns:
+                continue
+            o = ms.PointObservation(df.VMDR, x=row['lon'], y=row['lat'], name=i, quantity=q)
+            mdirlist.append(o)
+
+    return mdirlist
+
 
 
 def get_altimetry_obs(quality=None):
@@ -65,36 +84,4 @@ def get_altimetry_obs(quality=None):
             o = ms.TrackObservation(df, item="significant_wave_height", x_item="longitude", y_item="latitude", name=m, quantity=q)
         altlist.append(o)
     return altlist
-
-
-def plot_scatter_cc(cc, title):    
-    n_points = 10000
-    fig, axs = plt.subplots(len(cc), 1, figsize=(9, 4*len(cc)))
-
-    # Make sure axs is always iterable
-    if len(cc) == 1:
-        axs = [axs]
-    else:
-        axs = axs.flatten()
-
-    for i in range(len(cc)):
-        cc[i].plot.scatter(ax=axs[i], show_points=n_points)
-        axs[i].set_title(title + f"\n {cc[i].name}")
-        axs[i].legend(loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=1)
-
-    plt.tight_layout()
-    plt.show()
-
-
-def plot_timeseries_currents(cc, title):
-    time_slice = slice("2022-01","2022-01")
-    fig, axs = plt.subplots(len(cc), 1, figsize=(12,3*len(cc)))
-    axs = axs.flatten()
-    for i in range(len(cc)):
-        cc[i].sel(time=time_slice).plot.timeseries(ax=axs[i])
-        axs[i].set_title(title + f": {cc[i].name}")
-    plt.tight_layout()
-    plt.show()
-
-
 

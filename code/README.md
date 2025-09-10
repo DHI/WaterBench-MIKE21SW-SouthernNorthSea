@@ -15,8 +15,3 @@ xarray | 2025.3.0
 ipykernel | 6.29.5
 
 [`requirements.txt`](requirements.txt) contains the list of libraries and their versions used in the notebooks (excluding jupyter).
-
-
-
-
-# test

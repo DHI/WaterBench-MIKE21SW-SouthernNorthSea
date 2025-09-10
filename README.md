@@ -62,16 +62,38 @@ A simulation can be performed with the [MIKE modelling software](https://www.dhi
 - the water levels and current velocities on the South boundary
 - wind velocities in the domain.
 
-The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables:
-- 0. Significant wave height (meter)
-- 1. Peak wave period 
+The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables in the table below.
 
-| Variable  | Unit |
-| ------------- | ------------- |
-| Significant wave height  | meter  |
-| Peak wave period   | second |
-| Wave period, T02   | second |
-| Mean wave direction   | degree |
+| Item | Variable | Unit |
+| ------------- | ------------- | ------------- |
+| 0 | Significant wave height | meter  |
+| 1 | Peak wave period | second |
+| 2 | Wave period, T02 | second |
+| 3 | Mean wave direction   | degree |
+| 4 | x-comp. of wave height vector | meter per sec |
+| 5 | y-comp. of wave height vector | meter per sec |
+| 6 | Wind speed | meter per sec |
+| 7 | Wind direction | degree |
+
+These results are provided as a separate file on [TODO: Zenodo link]()
+
+Running the MIKE software requires a license. Read more about [obtaining a license](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing) and about [academic licensing](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing/academic-licenses). If you already have a license, read the [step-by-step guide](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_FM_HD_Step_By_Step.pdf) to learn how to run simulations.
+
+## Model validation
+
+The [ModelSkill Python package](https://dhi.github.io/modelskill/) developed at DHI can be used to validate model outputs by comparing them to observational data.
+
+In this case, the model is validated using both in-situ measurements from stations in the Southern North Sea and satellite altimetry data. This validation is performed in the Jupyter notebooks located at `code/model_validation_*.ipynb`. The leftmost figure below shows the location of the measurement stations, while the rightmost figure shows the spatial coverage of the altimetry data.
+
+![](figures/stations.png)
+![](figures/altimetry_coverage.png)
+
+Below is an example comparison between observational data from a measurement station and the MIKE 21 simulation, followed by a comparison with satellite altimetry data. Many more similar plots can be found in the validation notebooks `code/model_validation_*.ipynb`.
+
+![](figures/modelskill_comparison_Europlatform.png)
+![](figures/altimetry_comparison.png)
+
+## Data sources
 
 
 ## Other stuff

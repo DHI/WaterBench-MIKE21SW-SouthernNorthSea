@@ -17,3 +17,9 @@ litt
 
 # Notebook for downloading altimetry data
 download_altimetry_data.ipynb
+
+# Files for point obs extraction
+point_extraction.dxfm
+point_extraction.log
+
+

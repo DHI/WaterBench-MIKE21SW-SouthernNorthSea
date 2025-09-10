@@ -2,9 +2,9 @@
 
 This README provides practical and background information on the dataset. The dataset can be cited as:
 
-> DHI. (2025). Spectral wave model of the Southern North Sea: MIKE 21 SW model setup, outputs and observation data (1.0) [Data set]. Zenodo. [LINK](LINK)
+> DHI. (2025). Spectral wave model of the Southern North Sea: MIKE 21 SW model setup, outputs and observation data (1.0) [Data set]. Zenodo. [TODO:INSERT LINK](LINK)
 
-See the [license](license.txt) for details on data usage.
+See the [TODO:license](license.txt) for details on data usage.
 
 ## Intended use
 
@@ -50,11 +50,28 @@ The dataset covers the period 2022-01-01 to 2022-12-31. Since the simulation inc
 
 ## The MIKE 21 Spectral Wave Module
 
-MIKE 21 Flow Model FM is a modelling system based on a flexible mesh approach. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equation is the wave action balance equation formulated in either Cartesian or spherical coordinates. 
+MIKE 21 Flow Model FM is a modelling system based on a flexible mesh approach. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equation is the wave action balance equation formulated in either Cartesian or spherical coordinates. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/M21SW_Scientific_Doc.pdf).
 
-More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/M21SW_Scientific_Doc.pdf).
+The mesh consists of triangular elements, with higher resolution in areas of interest. For each mesh node, a depth value is assigned by interpolating bathymetric data. The mesh is shown in the figure below and consists of approximately 8000 elements covering an area of about 24.000 $km^2$.
 
+![](figures/geometry.png)
 
+A simulation can be performed with the [MIKE modelling software](https://www.dhigroup.com/technologies/mikepoweredbydhi), while supplying the following data for driving the model:
+
+- the water levels and current velocities on the North boundary
+- the water levels and current velocities on the South boundary
+- wind velocities in the domain.
+
+The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables:
+- 0. Significant wave height (meter)
+- 1. Peak wave period 
+
+| Variable  | Unit |
+| ------------- | ------------- |
+| Significant wave height  | meter  |
+| Peak wave period   | second |
+| Wave period, T02   | second |
+| Mean wave direction   | degree |
 
 
 ## Other stuff

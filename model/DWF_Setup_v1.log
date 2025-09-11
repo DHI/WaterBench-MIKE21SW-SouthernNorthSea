@@ -1,0 +1,768 @@
+// Created    : 2025-07-07 15:26:18
+// Executable : C:\Program Files (x86)\DHI\MIKE Zero\2024\bin\x64\femenginesw.exe
+// Version    : 22.0.3.17314
+
+
+======================= Computing Environment ========================
+  Local machine name              : vNC10081086-62
+  Number of subdomains            : 4
+  Local subdomain id              : 0
+  Specified threads per subdomain : 4
+======================================================================
+
+
+======================================================================
+Target: FemEngineSW
+
+    delete_logfile : 1 (default)
+    merge_data_default : 2 (default)
+
+
+  Section: SYSTEM ----------------------------------------------------
+
+
+  Section: TIME ------------------------------------------------------
+      start_time : 2022 1 1 0 0 0 
+      time_step_interval : 600
+      number_of_time_steps : 52554
+
+
+  Section: DOMAIN ----------------------------------------------------
+      number_of_dimensions : 2
+      file_name : C:\Users\muje\MIKE SW\Input\Mesh_8000_elems.mesh
+      check_mesh : 1 (default)
+      datum_depth : 0
+      minimum_depth : -5
+      thresshold_depth : 5.365665 (default)
+
+
+========================== Mesh information ==========================
+  Number of elements         : 8058
+  Number of faces            : 12294
+  Number of nodes            : 4237
+  Number of sections         : 5
+  Min x-coordinate (degree)  : -2.4591
+  Max x-coordinate (degree)  : 8.837038
+  Min y-coordinate (degree)  : 49.675121
+  Max y-coordinate (degree)  : 56
+  Min z-coordinate (m)       : -103.19004
+  Max z-coordinate (m)       : -5
+======================================================================
+
+
+======================== Boundary information ========================
+
+  number                code    number of points     number of faces
+       1                   1                 297                 295
+       2                   2                  15                  14
+       3                  31                  31                  30
+       4                  32                  31                  30
+       5                  33                  46                  45
+======================================================================
+      type_of_partitioning : 2 (default)
+      type_of_weighting : 0 (default)
+      use_METIS5_options : 0 (default)
+      small_master_partition : 1 (default)
+      type_of_halo_layer : 2 (default)
+      write_partitioning : 0 (default)
+
+
+============================= Partition ==============================
+  Number of partitions: 4
+ 
+  Dimension of mesh: 2
+ 
+ ---------------------------------------------------------------------
+  Partition Total elements     Domains           Halo elements
+                                            Internal      External
+ ---------------------------------------------------------------------
+          1            2014             1            74            74
+          2            2015             3           188           188
+          3            2014             2           133           136
+          4            2015             2            88            85
+ ---------------------------------------------------------------------
+        Sum            8058             8           483           483
+        Min            2014             1            74            74
+        Max            2015             3           188           188
+       Mean      0.2014E+04    0.2000E+01    0.1200E+03    0.1200E+03
+        Std      0.7071E+00    0.7071E+00    0.4453E+02    0.4533E+02
+ ---------------------------------------------------------------------
+======================================================================
+
+
+================= Mesh information - 2D (subdomain) ==================
+  Number of elements         : 2088
+  Number of elements (int.)  : 2014
+  Number of faces            : 3209
+  Number of faces (int.)     : 3094
+  Number of nodes            : 1122
+  Number of nodes (int.)     : 1081
+  Number of sections         : 3
+  Min x-coordinate (degree)  : 4.523573
+  Max x-coordinate (degree)  : 8.837038
+  Min y-coordinate (degree)  : 53.309824
+  Max y-coordinate (degree)  : 56
+  Min z-coordinate (m)       : -53.753723
+  Max z-coordinate (m)       : -5
+======================================================================
+
+
+=============== Boundary information - 2D (subdomain) ================
+
+  number                code    number of points     number of faces
+       1                   1                  79                  78
+       2                  31                  31                  30
+       3                  32                   5                   4
+======================================================================
+
+
+============== Halo layer information - 2D (subdomain) ===============
+
+ Internal layer
+
+  number    connected domain  number of elements
+       1                   2                  74
+
+ External layer
+
+  number    connected domain  number of elements
+       1                   2                  74
+======================================================================
+
+
+    Section: MATERIAL ------------------------------------------------
+        include_material_zones : 0
+
+
+    Section: INFRASTRUCTURE ------------------------------------------
+
+
+  Section: MODULE_SELECTION ------------------------------------------
+      mode_of_data_assimilation_module : 0 (default)
+
+
+  Section: SPECTRAL_WAVE_MODULE --------------------------------------
+      mode : 2
+
+
+    Section: EQUATION ------------------------------------------------
+        formulation : 2
+        time_formulation : 2
+        type_of_settings : 2
+        use_default_parameters : False (default)
+
+
+    Section: TIME ----------------------------------------------------
+        start_time_step : 0
+        time_step_factor : 1
+
+
+    Section: SPECTRAL ------------------------------------------------
+        type_of_frequency_discretization : 2
+        number_of_frequencies : 36
+        minimum_frequency : 0.033
+        frequency_factor : 1.11
+        type_of_directional_discretization : 1
+        number_of_directions : 36
+        separation_of_wind_sea_and_swell : 4
+        c_wave_age : 0.83
+        p_wave_age : 1
+        cutoff_factor_mean_frequency : 2.5 (default)
+        cutoff_factor_PM_frequency : 3 (default)
+        cutoff_mean_frequency_power : -1 (default)
+
+
+====================== Frequency discretization ======================
+
+ Number   Frequency (1/s)    Interval (1/s)        Period (s)
+
+      1        0.3300E-01        0.3450E-02        0.3030E+02
+      2        0.3663E-01        0.3830E-02        0.2730E+02
+      3        0.4066E-01        0.4251E-02        0.2459E+02
+      4        0.4513E-01        0.4719E-02        0.2216E+02
+      5        0.5010E-01        0.5238E-02        0.1996E+02
+      6        0.5561E-01        0.5814E-02        0.1798E+02
+      7        0.6172E-01        0.6453E-02        0.1620E+02
+      8        0.6851E-01        0.7163E-02        0.1460E+02
+      9        0.7605E-01        0.7951E-02        0.1315E+02
+     10        0.8442E-01        0.8826E-02        0.1185E+02
+     11        0.9370E-01        0.9796E-02        0.1067E+02
+     12        0.1040E+00        0.1087E-01        0.9615E+01
+     13        0.1154E+00        0.1207E-01        0.8662E+01
+     14        0.1281E+00        0.1340E-01        0.7803E+01
+     15        0.1422E+00        0.1487E-01        0.7030E+01
+     16        0.1579E+00        0.1651E-01        0.6333E+01
+     17        0.1753E+00        0.1832E-01        0.5706E+01
+     18        0.1945E+00        0.2034E-01        0.5140E+01
+     19        0.2159E+00        0.2258E-01        0.4631E+01
+     20        0.2397E+00        0.2506E-01        0.4172E+01
+     21        0.2661E+00        0.2782E-01        0.3759E+01
+     22        0.2953E+00        0.3088E-01        0.3386E+01
+     23        0.3278E+00        0.3427E-01        0.3051E+01
+     24        0.3639E+00        0.3804E-01        0.2748E+01
+     25        0.4039E+00        0.4223E-01        0.2476E+01
+     26        0.4483E+00        0.4687E-01        0.2231E+01
+     27        0.4976E+00        0.5203E-01        0.2010E+01
+     28        0.5524E+00        0.5775E-01        0.1810E+01
+     29        0.6131E+00        0.6410E-01        0.1631E+01
+     30        0.6806E+00        0.7115E-01        0.1469E+01
+     31        0.7554E+00        0.7898E-01        0.1324E+01
+     32        0.8385E+00        0.8767E-01        0.1193E+01
+     33        0.9308E+00        0.9731E-01        0.1074E+01
+     34        0.1033E+01        0.1080E+00        0.9679E+00
+     35        0.1147E+01        0.1199E+00        0.8720E+00
+     36        0.1273E+01        0.1331E+00        0.7856E+00
+======================================================================
+
+
+===================== Directional discretization =====================
+
+ Number  Direction (degree)   Interval (degree)
+
+      1          0.0000E+00          0.1000E+02
+      2          0.1000E+02          0.1000E+02
+      3          0.2000E+02          0.1000E+02
+      4          0.3000E+02          0.1000E+02
+      5          0.4000E+02          0.1000E+02
+      6          0.5000E+02          0.1000E+02
+      7          0.6000E+02          0.1000E+02
+      8          0.7000E+02          0.1000E+02
+      9          0.8000E+02          0.1000E+02
+     10          0.9000E+02          0.1000E+02
+     11          0.1000E+03          0.1000E+02
+     12          0.1100E+03          0.1000E+02
+     13          0.1200E+03          0.1000E+02
+     14          0.1300E+03          0.1000E+02
+     15          0.1400E+03          0.1000E+02
+     16          0.1500E+03          0.1000E+02
+     17          0.1600E+03          0.1000E+02
+     18          0.1700E+03          0.1000E+02
+     19          0.1800E+03          0.1000E+02
+     20          0.1900E+03          0.1000E+02
+     21          0.2000E+03          0.1000E+02
+     22          0.2100E+03          0.1000E+02
+     23          0.2200E+03          0.1000E+02
+     24          0.2300E+03          0.1000E+02
+     25          0.2400E+03          0.1000E+02
+     26          0.2500E+03          0.1000E+02
+     27          0.2600E+03          0.1000E+02
+     28          0.2700E+03          0.1000E+02
+     29          0.2800E+03          0.1000E+02
+     30          0.2900E+03          0.1000E+02
+     31          0.3000E+03          0.1000E+02
+     32          0.3100E+03          0.1000E+02
+     33          0.3200E+03          0.1000E+02
+     34          0.3300E+03          0.1000E+02
+     35          0.3400E+03          0.1000E+02
+     36          0.3500E+03          0.1000E+02
+======================================================================
+
+
+    Section: SOLUTION_TECHNIQUE --------------------------------------
+        error_level : 0
+        maximum_number_of_errors : 200
+        type_of_growth_limiter : 1 (default)
+        scheme_of_space_discretization_geographical : 1
+        scheme_of_space_discretization_direction : 1
+        scheme_of_space_discretization_frequency : 1
+        scheme_of_time_integration : 1 (default)
+        number_of_levels_in_transport_calc : 32
+        number_of_steps_in_source_calc : 1
+        type_of_CFL_number : 2 (default)
+        maximum_CFL_number : 1
+        dt_min : 0.01
+        dt_max : 600
+
+
+    Section: DEPTH ---------------------------------------------------
+        type : 0
+        minimum_depth : 0.01
+  
+  Number of water points:         2088
+  
+
+
+    Section: CURRENT -------------------------------------------------
+        type : 0
+
+
+    Section: WIND ----------------------------------------------------
+        type : 2
+        format : 3
+        soft_time_interval : 0
+        file_name : C:\Users\muje\MIKE SW\Input\Wind_2022.dfs2
+        item_number_for_x_velocity : 1
+        item_number_for_y_velocity : 2
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\muje\MIKE SW\Input\Wind_2022.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-01-01    00:00:00  8760       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    49 16666.7011            0   meter
+     2    51 16666.7011            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  U                    Wind Velocity          -24.1766    27.1229 meter/sec
+  V                    Wind Velocity        -22.287714   21.48085 meter/sec
+  Mean Sea Level Press Pressure             96603.8513 105087.182 pascal
+----------------------------------------------------------------------
+        height_of_wind_specification : 10 (default)
+        calculate_neutral_wind : 0
+        linear_growth_coefficient : 0.0015
+        shallow_water : 1 (default)
+        type_of_air_sea_interaction : 1
+        growth_parameter : 1.65
+        wave_age_tuning_parameter : 0.008
+        type_of_background_Charnock_parameter : 1 (default)
+        background_Charnock_parameter : 0.02
+        use_total_stress_table : False (default)
+        use_high_frequency_stress_table : False (default)
+        type_of_wave_stress_limiter : 2 (default)
+        maximum_wave_stress : 5 (default)
+        su : 0.25 (default)
+        type_of_swell_dissipation : 2 (default)
+        s1 : 0.66 (default)
+        s2 : -0.018 (default)
+        s3 : 0.022 (default)
+        re_critical : 150000 (default)
+        s5 : 1.2 (default)
+        s6 : 0 (default)
+        s7 : 360000 (default)
+        rz0 : 0.04 (default)
+        z0_max : 0.0005 (default)
+
+
+      Section: CORRECTION_OF_FRICTION_VELOCITY -----------------------
+          type : 1
+          CAP_value : 0.06
+
+
+      Section: CURRENT -----------------------------------------------
+
+
+    Section: WATER_PROPERTIES ----------------------------------------
+        type_of_density : 1
+
+
+      Section: DENSITY -----------------------------------------------
+          format : 0
+          constant_value : 1010
+
+
+    Section: AIR_PROPERTIES ------------------------------------------
+        type_of_density : 1
+
+
+      Section: DENSITY -----------------------------------------------
+          format : 0
+          constant_value : 1.23725
+
+
+    Section: ICE -----------------------------------------------------
+        type : 0
+
+
+    Section: DIFFRACTION ---------------------------------------------
+        type : 0
+
+
+    Section: TRANSFER ------------------------------------------------
+        type : 1
+        cnl : 27784160.8 (default)
+        type_triad : 0
+
+
+    Section: BOTTOM_FRICTION -----------------------------------------
+        type : 3
+        constant_fc : 0
+
+
+      Section: NIKURADSE_ROUGHNESS -----------------------------------
+          format : 0
+          constant_value : 0.01
+
+
+    Section: VEGETATION ----------------------------------------------
+        type : 0
+
+
+    Section: MUD -----------------------------------------------------
+        type : 0
+
+
+    Section: WAVE_BREAKING -------------------------------------------
+        type : 1
+        type_of_gamma : 1
+        alpha : 1
+        type_of_roller : 0
+
+
+      Section: GAMMA -------------------------------------------------
+          format : 0
+          constant_value : 0.8
+
+
+    Section: WHITECAPPING --------------------------------------------
+        type : 1
+        cds_sat : -0.000022 (default)
+        dtheta : 80 (default)
+        br : 0.0009 (default)
+        sb : 2 (default)
+        deltad : 0.3 (default)
+        ccu : 0 (default)
+        rcu : 0.5 (default)
+
+
+    Section: WAKE_WASH -----------------------------------------------
+
+
+    Section: STRUCTURES ----------------------------------------------
+
+
+      Section: POINT_STRUCTURES --------------------------------------
+        type : 0
+
+
+      Section: LINE_STRUCTURES ---------------------------------------
+          number_of_structures : 0
+          output_of_link_data : 0
+
+
+    Section: INITIAL_CONDITIONS --------------------------------------
+        type : 0
+
+
+    Section: BOUNDARY_CONDITIONS -------------------------------------
+
+
+      Section: CODE_1 ------------------------------------------------
+          type : 1 (default)
+
+
+      Section: CODE_2 ------------------------------------------------
+          type : 5
+          format : 1
+          file_name : C:\Users\muje\MIKE SW\Input\SW_South_BC_2022.dfs2
+          item_number : 1
+          type_of_soft_start : 1
+          soft_time_interval : 0
+          reference_value : 0 (default)
+          type_of_time_interpolation : 1
+
+
+      Section: CODE_31 -----------------------------------------------
+          type : 5
+          format : 1
+          file_name : C:\Users\muje\MIKE SW\Input\SW_NorthEast_BC_2022.dfs2
+          item_number : 1
+          type_of_soft_start : 1
+          soft_time_interval : 0
+          reference_value : 0 (default)
+          type_of_time_interpolation : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\muje\MIKE SW\Input\SW_NorthEast_BC_2022.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2021-12-20    00:00:00  9048       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    36        1.1        0.035   meter
+     2    36         10            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  6_56: Energy density Wave energy density           0  185.16927 meter^2*sec/rad
+----------------------------------------------------------------------
+          type_of_angle_definition : 1 (default)
+
+
+      Section: CODE_32 -----------------------------------------------
+          type : 5
+          format : 1
+          file_name : C:\Users\muje\MIKE SW\Input\SW_North_BC_2022.dfs2
+          item_number : 1
+          type_of_soft_start : 1
+          soft_time_interval : 0
+          reference_value : 0 (default)
+          type_of_time_interpolation : 1
+------------------------- Data File Summary --------------------------
+  Creator: mikeio
+  File   : C:\Users\muje\MIKE SW\Input\SW_North_BC_2022.dfs2
+  Title  : 
+
+  Start date  Start time  Sets   Interval  Unit
+  2021-12-20    00:00:00  9048       3600  second
+
+  Axis  Sets   Interval  Axis origin  Unit
+     1    36        1.1        0.035   meter
+     2    36         10            0   meter
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  3_56: Energy density Wave energy density           0 162.471622 meter^2*sec/rad
+----------------------------------------------------------------------
+          type_of_angle_definition : 1 (default)
+
+
+      Section: CODE_33 -----------------------------------------------
+          type : 5
+          format : 1
+          file_name : C:\Users\muje\MIKE SW\Input\SW_NorthWest_BC_2022.dfs2
+          item_number : 1
+          type_of_soft_start : 1
+          soft_time_interval : 0
+          reference_value : 0 (default)
+          type_of_time_interpolation : 1
+
+
+    Section: OUTPUTS -------------------------------------------------
+        number_of_outputs : 1
+        merge_data : 2 (default)
+
+
+      Section: OUTPUT_1 ----------------------------------------------
+          include : 1
+          file_name : C:\Users\muje\MIKE SW\Input\DWF_Setup_v1.sw - Result Files\Area.dfsu
+          title : Output 1
+          type : 1
+          format : 2
+          delete_value : 1.E-35 (default)
+          flood_and_dry : 2
+          ordering : 2 (default)
+          precision : 2 (default)
+          use_end_time : 1
+          first_time_step : 0
+          time_step_frequency : 1
+          number_of_variables : 0 (default)
+          interpolation_type : 1
+
+
+        Section: INTEGRAL_WAVE_PARAMETERS ----------------------------
+            type_of_spectrum : 1
+            separation_of_wind_sea_and_swell : 5
+            threshold_frequency : 0.125
+            hm0_minimum : 0.01
+            type_of_h_max : 3
+            duration : 10800
+            distance_above_bed_for_particle_velocity : 0
+
+
+          Section: Total_wave_parameters -----------------------------
+              Significant_wave_height : 1
+              Maximum_wave_height : 0
+              Peak_wave_period : 1
+              Wave_period_t01 : 0
+              Wave_period_t02 : 1
+              Wave_period_tm10 : 0
+              Peak_wave_direction : 0
+              Mean_wave_direction : 1
+              Directional_standard_deviation : 0
+              Wave_velocity_components : 1
+              Radiation_stresses : 0
+              Particle_velocities : 0
+              Wave_power : 0
+              Surface_Stokes_drift : 0
+
+
+          Section: Wind_sea_parameters -------------------------------
+              Significant_wave_height : 0
+              Maximum_wave_height : 0
+              Peak_wave_period : 0
+              Wave_period_t01 : 0
+              Wave_period_t02 : 0
+              Wave_period_tm10 : 0
+              Peak_wave_direction : 0
+              Mean_wave_direction : 0
+              Directional_standard_deviation : 0
+              Wave_velocity_components : 0
+              Radiation_stresses : 0
+              Particle_velocities : 0
+              Wave_power : 0
+              Surface_Stokes_drift : 0
+
+
+          Section: Swell_parameters ----------------------------------
+              Significant_wave_height : 0
+              Maximum_wave_height : 0
+              Peak_wave_period : 0
+              Wave_period_t01 : 0
+              Wave_period_t02 : 0
+              Wave_period_tm10 : 0
+              Peak_wave_direction : 0
+              Mean_wave_direction : 0
+              Directional_standard_deviation : 0
+              Wave_velocity_components : 0
+              Radiation_stresses : 0
+              Particle_velocities : 0
+              Wave_power : 0
+              Surface_Stokes_drift : 0
+
+
+        Section: INPUT_PARAMETERS ------------------------------------
+            Surface_elevation : 0
+            Water_depth : 0
+            Current_velocity_components : 0
+            Wind_speed : 1
+            Wind_direction : 1
+            Dissipation_coefficient_c : 0 (default)
+            Dissipation_coefficient_delta : 0 (default)
+            Ice_concentration : 0
+            Water_density : 0
+            Air_density : 0
+
+
+        Section: MODEL_PARAMETERS ------------------------------------
+            Wind_friction_speed : 0
+            Roughness_length : 0
+            Drag_coefficient : 0
+            Charnock_constant : 0
+            Friction_coefficient : 0
+            Breaking_parameter_gamma : 0
+            Threshold_period : 0
+            Courant_number : 0
+            Time_step_factor : 0
+            Convergence_angle : 0
+            Length : 0
+            Area : 0
+            Breaking_index : 0
+            Iribarren_number : 0 (default)
+          coordinate_type : LONG/LAT
+
+
+        Section: AREA ------------------------------------------------
+            number_of_points : 4
+
+
+          Section: POINT_1 -------------------------------------------
+              x : -2.572061
+              y : 49.611872
+
+
+          Section: POINT_2 -------------------------------------------
+              x : -2.572061
+              y : 56.063249
+
+
+          Section: POINT_3 -------------------------------------------
+              x : 8.949999
+              y : 56.063249
+
+
+          Section: POINT_4 -------------------------------------------
+              x : 8.949999
+              y : 49.611872
+
+
+======================== COMPUTATION STARTED =========================
+
+
+========================= COMPUTATION ENDED ==========================
+
+
+========================= Output Statistics ==========================
+ 
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\muje\MIKE SW\Input\DWF_Setup_v1.sw - Result Files\Area.dfsu
+  Title  : Output 1
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-01-01    00:00:00 52555        600  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1       4237 Integer
+  X-coord              Latitude/longitude      -2.4591   8.837038 degree
+  Y-coord              Latitude/longitude    49.675121         56 degree
+  Z-coord              Item geometry 3-dime -103.19004         -5 meter
+  Code                 Grid Codes                    0         33 Integer
+  Element id           Grid Codes                    1       8058 Integer
+  Element type         Grid Codes                   21         21 Integer
+  No of nodes          Grid Codes                    3          3 Integer
+  Connectivity         Grid Codes                    1       4237 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Sign. Wave Height    Significant wave hei          0   9.171737 meter
+  Peak Wave Period     Wave period            0.785564  23.920465 second
+  Wave Period, T02     Wave period            0.614441   12.82753 second
+  Mean Wave Direction  Mean Wave Direction  1.7149E-07        360 degree
+  x-comp. of wave heig u-velocity component  -8.044542   7.396591 meter/sec
+  y-comp. of wave heig v-velocity component  -7.506837   5.802329 meter/sec
+  Wind speed           Wind speed             0.000483  27.650057 meter/sec
+  Wind direction       Wind Direction       4.0395E-07        360 degree
+----------------------------------------------------------------------
+ 
+======================================================================
+
+
+================ Spectral Wave Simulation Diagnostic =================
+  Number of time steps         : 105108
+  Duration time (s)             : 31532400
+  Minimum time step (s)         : 300
+  Maximum time step (s)         : 300
+  Level factor                  : 3.55932
+======================================================================
+
+
+========================= Simulation Timings =========================
+  ------------------------------------------------------------------
+  Task                                      CPU time    Elapsed time
+  ------------------------------------------------------------------
+  Spectral Wave Module                      78377.73        79375.69
+    Update forcings                           108.95          113.84
+    Transport step                          18815.98        19065.88
+    Growth/decay step                       44894.70        45315.18
+    Other calculations                      14556.28        14879.98
+  ------------------------------------------------------------------
+  Total                                     78377.73        79375.69
+  ------------------------------------------------------------------
+======================================================================
+
+
+===================== MPI Communication Timings ======================
+  ------------------------------------------------------------------
+  Task                                      CPU time    Elapsed time
+  ------------------------------------------------------------------
+  Halo data                                  4064.67         4199.94
+  Additional data                            3600.14         3656.46
+  ------------------------------------------------------------------
+  Total                                      7671.75         7859.16
+  ------------------------------------------------------------------
+======================================================================
+
+
+========================== Overall Timings ===========================
+  ------------------------------------------------------------------
+  Task                                      CPU time    Elapsed time
+  ------------------------------------------------------------------
+  Pre-processing                                0.66            3.23
+  Calculation                               78377.89        79375.87
+  License check                                24.39          550.75
+  Post-processing                             520.98         1178.02
+  ------------------------------------------------------------------
+  Total                                     78924.33        81108.18
+  ------------------------------------------------------------------
+======================================================================
+
+
+============================ Memory Usage ============================
+  Peak memory usage (MB)                                      291.10
+======================================================================
+
+
+========================== Parallelization ===========================
+  Number of threads per subdomain : 1
+  Number of subdomains            : 4
+======================================================================
+ 
+  Number of warnings: 0
+ 
+  Normal run completion

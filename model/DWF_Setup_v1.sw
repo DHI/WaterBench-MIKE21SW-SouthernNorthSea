@@ -200,7 +200,7 @@
          format = 3
          constant_speed = 0.0
          constant_direction = 0.0
-         file_name = |.\Wind.dfs2|
+         file_name = |..Wind.dfs2|
          item_number_for_x_velocity = 1
          item_number_for_y_velocity = 2
          item_name_for_x_velocity = 'U'

@@ -3,7 +3,7 @@
 import zipfile
 import glob
 
-zip_fn = ".publish/WaterBench-MIKE21HD-SouthernNorthSea.zip"
+zip_fn = ".publish/WaterBench-MIKE21SW-SouthernNorthSea.zip"
 
 
 def zip_repo():

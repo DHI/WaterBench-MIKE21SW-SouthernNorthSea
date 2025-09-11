@@ -8,12 +8,11 @@ pyproject.toml
 .python-version
 uv.lock
 
-.preprocessing
 copernicus-data
 raw-data
 
 observations_HD
-litt
+.lit
 
 # Notebook for downloading altimetry data
 download_altimetry_data.ipynb

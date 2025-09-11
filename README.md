@@ -38,6 +38,8 @@ The repository is organized in the following way
 
 Separately from the current repository, you can find the output zip file (in Zenodo):
 
+- input
+    + Boundary conditions, wind input and MIKE HD model result data (.dfsu and .dfs2)
 - output
     + MIKE model result data (.dfsu and .dfs0)
 

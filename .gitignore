@@ -1,6 +1,7 @@
 /__pycache__
 /input
 /output
+/output_old
 .venv
 
 # UV stuff
@@ -19,6 +20,7 @@ download_altimetry_data.ipynb
 
 # Notebook for formatting input files
 format_input_files.ipynb
+create_output_sample.ipynb
 
 # Files for point obs extraction
 point_extraction.dxfm

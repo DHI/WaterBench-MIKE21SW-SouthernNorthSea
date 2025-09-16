@@ -9,11 +9,17 @@ pyproject.toml
 .python-version
 uv.lock
 
+# Copernicus
 copernicus-data
 raw-data
+download_copernicus_data.ipynb
+copernicus_utils.py
+
 
 observations_HD
 .lit
+
+
 
 # Notebook for downloading altimetry data
 download_altimetry_data.ipynb

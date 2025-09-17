@@ -7,7 +7,7 @@ import modelskill as ms
 obs_fldr = "../observations/" 
 alt_fldr = "../observations/altimetry/"
 df_stn = pd.read_csv(obs_fldr + "stations.csv", index_col=0)
-df_stn_cur = pd.read_csv(obs_fldr + "current_stations.csv", index_col=0)
+#df_stn_cur = pd.read_csv(obs_fldr + "current_stations.csv", index_col=0)
 
 
 def get_swh_point_obs(station_file):

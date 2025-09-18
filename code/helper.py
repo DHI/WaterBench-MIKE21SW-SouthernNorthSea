@@ -4,11 +4,8 @@ import warnings
 import pandas as pd
 import modelskill as ms
 
-obs_fldr = "../observations/" 
+obs_fldr = "../observations/"
 alt_fldr = "../observations/altimetry/"
-df_stn = pd.read_csv(obs_fldr + "stations.csv", index_col=0)
-#df_stn_cur = pd.read_csv(obs_fldr + "current_stations.csv", index_col=0)
-
 
 def get_swh_point_obs(obs_fldr, station_file):
     """Get wave height point observations as list of PointObservation objects"""

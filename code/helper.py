@@ -44,10 +44,10 @@ def get_tp_point_obs(station_file):
             tplist.append(o)
     return tplist
 
-def get_mdir_point_obs(station_file):
+def get_mwd_point_obs(station_file):
     """Get wave period point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Mean wave direction", unit="degree")
-    mdirlist = []
+    mwdlist = []
 
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)
 
@@ -60,9 +60,9 @@ def get_mdir_point_obs(station_file):
             if 'VMDR' not in df.columns:
                 continue
             o = ms.PointObservation(df.VMDR, x=row['lon'], y=row['lat'], name=i, quantity=q)
-            mdirlist.append(o)
+            mwdlist.append(o)
 
-    return mdirlist
+    return mwdlist
 
 
 

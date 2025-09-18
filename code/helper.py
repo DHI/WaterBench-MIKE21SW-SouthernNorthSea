@@ -10,9 +10,9 @@ df_stn = pd.read_csv(obs_fldr + "stations.csv", index_col=0)
 #df_stn_cur = pd.read_csv(obs_fldr + "current_stations.csv", index_col=0)
 
 
-def get_swh_point_obs(station_file):
+def get_swh_point_obs(obs_fldr, station_file):
     """Get wave height point observations as list of PointObservation objects"""
-    q = ms.Quantity(name="Significant wave height", unit="m")
+    q = ms.Quantity(name="Significant Wave Height", unit="meter")
     swhlist = []
 
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)

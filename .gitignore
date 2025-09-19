@@ -15,11 +15,10 @@ raw-data
 download_copernicus_data.ipynb
 copernicus_utils.py
 
-
+# Observations
 observations_HD
+observations_old
 .lit
-
-
 
 # Notebook for downloading altimetry data
 download_altimetry_data.ipynb

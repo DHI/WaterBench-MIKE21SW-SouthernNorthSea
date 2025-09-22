@@ -67,7 +67,7 @@ This repository includes
 
 The dataset covers the period 2022-01-01 to 2023-12-31. Since the simulation includes a spin-up period, it is recommended to discard the first two days of result data for analysis.
 
-## The MIKE 21 Spectral Wave Module
+## The MIKE 21 Spectral Wave Model
 
 MIKE 21 Flow Model FM is a modelling system based on a flexible mesh approach. The modelling system has been developed for applications within oceanographic, coastal and estuarine environments. The governing equation is the wave action balance equation formulated in either Cartesian or spherical coordinates. More information can be found [in the documentation](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/M21SW_Scientific_Doc.pdf).
 
@@ -77,9 +77,12 @@ The mesh consists of triangular elements, with higher resolution in areas of int
 
 A simulation can be performed with the [MIKE modelling software](https://www.dhigroup.com/technologies/mikepoweredbydhi), while supplying the following data for driving the model:
 
-- the water levels and current velocities on the North boundary
-- the water levels and current velocities on the South boundary
+- the spectral wave energy density on the North boundary
+- the spectral wave energy density on the South boundary
+- the water level and currents in the domain
 - wind velocities in the domain.
+
+This input data can be found in the [/input](/input) folder. Model parameters, e.g. bed resistance constant, can be calibrated by comparing the model simulations to observational data. 
 
 The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables in the table below.
 
@@ -89,14 +92,12 @@ The model outputs are provided both as point timeseries (dfs0) and as time-varyi
 | 1 | Peak wave period | second |
 | 2 | Wave period, T02 | second |
 | 3 | Mean wave direction   | degree |
-| 4 | x-comp. of wave height vector | meter per sec |
-| 5 | y-comp. of wave height vector | meter per sec |
-| 6 | Wind speed | meter per sec |
-| 7 | Wind direction | degree |
 
-These results are provided as a separate file on [TODO: Zenodo link]()
+These results are provided as a separate file on [Zenodo](https://doi.org/10.5281/zenodo.17099654). After running a simulation, a log file is generated. For the benchmark simulation, this log file is available in the [/model](/model) folder and contains details on parameter settings and runtime.
 
 Running the MIKE software requires a license. Read more about [obtaining a license](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing) and about [academic licensing](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing/academic-licenses). If you already have a license, read the [step-by-step guide](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_FM_HD_Step_By_Step.pdf) to learn how to run simulations.
+
+The input and output data are given as dfs files, which can be processed using the [MIKE IO](https://dhi.github.io/mikeio/) Python package developed by DHI. 
 
 ## Model validation
 
@@ -104,7 +105,7 @@ The [ModelSkill Python package](https://dhi.github.io/modelskill/) developed at 
 
 In this case, the model is validated using both in-situ measurements from stations in the Southern North Sea and satellite altimetry data. This validation is performed in the Jupyter notebooks located at `code/model_validation_*.ipynb`. The leftmost figure below shows the location of the measurement stations, while the rightmost figure shows the spatial coverage of the altimetry data.
 
-![](figures/stations.png)
+![](figures/swh_stations.png)
 ![](figures/altimetry_coverage.png)
 
 Below is an example comparison between observational data from a measurement station and the MIKE 21 simulation, followed by a comparison with satellite altimetry data. Many more similar plots can be found in the validation notebooks `code/model_validation_*.ipynb`.
@@ -113,6 +114,8 @@ Below is an example comparison between observational data from a measurement sta
 ![](figures/altimetry_comparison.png)
 
 ## Data sources
+
+- **Altimetry data**: Only data points marked as "good" by quality flags are included.
 
 
 ## Other stuff

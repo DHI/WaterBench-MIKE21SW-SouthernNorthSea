@@ -105,14 +105,12 @@ The [ModelSkill Python package](https://dhi.github.io/modelskill/) developed at 
 
 In this case, the model is validated using both in-situ measurements from stations in the Southern North Sea and satellite altimetry data. This validation is performed in the Jupyter notebooks located at `code/model_validation_*.ipynb`. The leftmost figure below shows the location of the measurement stations, while the rightmost figure shows the spatial coverage of the altimetry data.
 
-<p align="center">
-  <img src="figures/swh_stations.png" alt="SWH Stations" width="45%"/>
-  <img src="figures/altimetry_coverage.png" alt="Altimetry Coverage" width="45%"/>
-</p>
+![](figures/swh_and_altimetry.png)
 
 
 ![](figures/swh_stations.png)
 ![](figures/altimetry_coverage.png)
+
 
 
 

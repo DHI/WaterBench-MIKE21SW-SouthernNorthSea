@@ -118,7 +118,7 @@ Several data sources contribute to this case, as outlined below.
 
 The following changes have been made to the data:
 In general for the observations: Only active stations/bouys are used. The time index is converted to UTC. More specifically, 
-- **Wave observations**: 
+- **Wave height observations**: A few outliers and zero observations (caused by a station malfunction) were removed.
 - **Peak wave period observations**:
 - **Mean wave direction observations**: 
 - **Altimetry data**: Only data points marked as "good" by quality flags are included.

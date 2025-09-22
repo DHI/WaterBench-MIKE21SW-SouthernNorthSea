@@ -1,4 +1,4 @@
-// Created    : 2025-07-07 15:26:18
+// Created    : 2025-09-12 12:23:38
 // Executable : C:\Program Files (x86)\DHI\MIKE Zero\2024\bin\x64\femenginesw.exe
 // Version    : 22.0.3.17314
 
@@ -23,8 +23,8 @@ Target: FemEngineSW
 
   Section: TIME ------------------------------------------------------
       start_time : 2022 1 1 0 0 0 
-      time_step_interval : 600
-      number_of_time_steps : 52554
+      time_step_interval : 1800
+      number_of_time_steps : 35038
 
 
   Section: DOMAIN ----------------------------------------------------
@@ -275,11 +275,41 @@ Target: FemEngineSW
 
 
     Section: DEPTH ---------------------------------------------------
-        type : 0
+        type : 1
         minimum_depth : 0.01
   
   Number of water points:         2088
   
+        format : 3
+        soft_time_interval : 0
+        file_name : C:\Users\muje\MIKE SW\input/AreaHD.dfsu
+        item_number : 1
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\muje\MIKE SW\input/AreaHD.dfsu
+  Title  : Area
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-01-01    00:00:00 35039       1800  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1       4504 Integer
+  X-coord              Latitude/longitude      -2.4591   8.837038 degree
+  Y-coord              Latitude/longitude    49.675121         56 degree
+  Z-coord              Item geometry 3-dime -104.88746   8.746446 meter
+  Code                 Grid Codes                    0          3 Integer
+  Element id           Grid Codes                    1       8566 Integer
+  Element type         Grid Codes                   21         21 Integer
+  No of nodes          Grid Codes                    3          3 Integer
+  Connectivity         Grid Codes                    1       4504 Integer
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Surface elevation    Surface Elevation     -5.023972   5.213018 meter
+  U velocity           u-velocity component  -1.545715   1.771598 meter/sec
+  V velocity           v-velocity component  -1.983072   2.291547 meter/sec
+----------------------------------------------------------------------
 
 
     Section: CURRENT -------------------------------------------------
@@ -290,16 +320,16 @@ Target: FemEngineSW
         type : 2
         format : 3
         soft_time_interval : 0
-        file_name : C:\Users\muje\MIKE SW\Input\Wind_2022.dfs2
+        file_name : C:\Users\muje\MIKE SW\Input\Wind.dfs2
         item_number_for_x_velocity : 1
         item_number_for_y_velocity : 2
 ------------------------- Data File Summary --------------------------
   Creator: mikeio
-  File   : C:\Users\muje\MIKE SW\Input\Wind_2022.dfs2
+  File   : C:\Users\muje\MIKE SW\Input\Wind.dfs2
   Title  : 
 
   Start date  Start time  Sets   Interval  Unit
-  2022-01-01    00:00:00  8760       3600  second
+  2022-01-01    00:00:00 17520       3600  second
 
   Axis  Sets   Interval  Axis origin  Unit
      1    49 16666.7011            0   meter
@@ -307,9 +337,9 @@ Target: FemEngineSW
 
   Dynamic items:
   Item name            Item type               Minimum    Maximum Unit
-  U                    Wind Velocity          -24.1766    27.1229 meter/sec
-  V                    Wind Velocity        -22.287714   21.48085 meter/sec
-  Mean Sea Level Press Pressure             96603.8513 105087.182 pascal
+  U                    Wind Velocity        -26.619532    27.1229 meter/sec
+  V                    Wind Velocity        -22.287714  26.968582 meter/sec
+  Mean Sea Level Press Pressure             95520.5932 105087.182 pascal
 ----------------------------------------------------------------------
         height_of_wind_specification : 10 (default)
         calculate_neutral_wind : 0
@@ -447,7 +477,7 @@ Target: FemEngineSW
       Section: CODE_2 ------------------------------------------------
           type : 5
           format : 1
-          file_name : C:\Users\muje\MIKE SW\Input\SW_South_BC_2022.dfs2
+          file_name : C:\Users\muje\MIKE SW\Input\SW_South_BC.dfs2
           item_number : 1
           type_of_soft_start : 1
           soft_time_interval : 0
@@ -458,7 +488,7 @@ Target: FemEngineSW
       Section: CODE_31 -----------------------------------------------
           type : 5
           format : 1
-          file_name : C:\Users\muje\MIKE SW\Input\SW_NorthEast_BC_2022.dfs2
+          file_name : C:\Users\muje\MIKE SW\Input\SW_NorthEast_BC.dfs2
           item_number : 1
           type_of_soft_start : 1
           soft_time_interval : 0
@@ -466,11 +496,11 @@ Target: FemEngineSW
           type_of_time_interpolation : 1
 ------------------------- Data File Summary --------------------------
   Creator: mikeio
-  File   : C:\Users\muje\MIKE SW\Input\SW_NorthEast_BC_2022.dfs2
+  File   : C:\Users\muje\MIKE SW\Input\SW_NorthEast_BC.dfs2
   Title  : 
 
   Start date  Start time  Sets   Interval  Unit
-  2021-12-20    00:00:00  9048       3600  second
+  2021-12-20    00:00:00 17808       3600  second
 
   Axis  Sets   Interval  Axis origin  Unit
      1    36        1.1        0.035   meter
@@ -486,7 +516,7 @@ Target: FemEngineSW
       Section: CODE_32 -----------------------------------------------
           type : 5
           format : 1
-          file_name : C:\Users\muje\MIKE SW\Input\SW_North_BC_2022.dfs2
+          file_name : C:\Users\muje\MIKE SW\Input\SW_North_BC.dfs2
           item_number : 1
           type_of_soft_start : 1
           soft_time_interval : 0
@@ -494,11 +524,11 @@ Target: FemEngineSW
           type_of_time_interpolation : 1
 ------------------------- Data File Summary --------------------------
   Creator: mikeio
-  File   : C:\Users\muje\MIKE SW\Input\SW_North_BC_2022.dfs2
+  File   : C:\Users\muje\MIKE SW\Input\SW_North_BC.dfs2
   Title  : 
 
   Start date  Start time  Sets   Interval  Unit
-  2021-12-20    00:00:00  9048       3600  second
+  2021-12-20    00:00:00 17808       3600  second
 
   Axis  Sets   Interval  Axis origin  Unit
      1    36        1.1        0.035   meter
@@ -506,7 +536,7 @@ Target: FemEngineSW
 
   Dynamic items:
   Item name            Item type               Minimum    Maximum Unit
-  3_56: Energy density Wave energy density           0 162.471622 meter^2*sec/rad
+  3_56: Energy density Wave energy density           0 191.231554 meter^2*sec/rad
 ----------------------------------------------------------------------
           type_of_angle_definition : 1 (default)
 
@@ -514,7 +544,7 @@ Target: FemEngineSW
       Section: CODE_33 -----------------------------------------------
           type : 5
           format : 1
-          file_name : C:\Users\muje\MIKE SW\Input\SW_NorthWest_BC_2022.dfs2
+          file_name : C:\Users\muje\MIKE SW\Input\SW_NorthWest_BC.dfs2
           item_number : 1
           type_of_soft_start : 1
           soft_time_interval : 0
@@ -523,13 +553,13 @@ Target: FemEngineSW
 
 
     Section: OUTPUTS -------------------------------------------------
-        number_of_outputs : 1
+        number_of_outputs : 2
         merge_data : 2 (default)
 
 
       Section: OUTPUT_1 ----------------------------------------------
           include : 1
-          file_name : C:\Users\muje\MIKE SW\Input\DWF_Setup_v1.sw - Result Files\Area.dfsu
+          file_name : C:\Users\muje\MIKE SW\Input\DWF_Setup.sw - Result Files\Area.dfsu
           title : Output 1
           type : 1
           format : 2
@@ -564,7 +594,7 @@ Target: FemEngineSW
               Peak_wave_direction : 0
               Mean_wave_direction : 1
               Directional_standard_deviation : 0
-              Wave_velocity_components : 1
+              Wave_velocity_components : 0
               Radiation_stresses : 0
               Particle_velocities : 0
               Wave_power : 0
@@ -609,8 +639,8 @@ Target: FemEngineSW
             Surface_elevation : 0
             Water_depth : 0
             Current_velocity_components : 0
-            Wind_speed : 1
-            Wind_direction : 1
+            Wind_speed : 0
+            Wind_direction : 0
             Dissipation_coefficient_c : 0 (default)
             Dissipation_coefficient_delta : 0 (default)
             Ice_concentration : 0
@@ -660,6 +690,139 @@ Target: FemEngineSW
               y : 49.611872
 
 
+      Section: OUTPUT_2 ----------------------------------------------
+          include : 1
+          file_name : C:\Users\muje\MIKE SW\Input\DWF_Setup.sw - Result Files\Points_spectral.dfsu
+          title : Output 2
+          type : 4
+          format : 0
+          delete_value : 1.E-35 (default)
+          flood_and_dry : 2
+          precision : 2 (default)
+          use_end_time : 1
+          first_time_step : 0
+          time_step_frequency : 1
+          number_of_variables : 0 (default)
+          interpolation_type : 2
+          interpolation_subtype : 1 (default)
+          merge_data : 2 (default)
+
+
+        Section: SPECTRAL_PARAMETERS ---------------------------------
+            separation_of_wind_sea_and_swell : 5
+            wave_energy : 1
+            wave_action : 0
+            wave_energy_wind_sea : 0
+            wave_energy_swell : 0
+          input_format : 1
+          coordinate_type : LONG/LAT
+          number_of_points : 16
+
+
+        Section: POINT_1 ---------------------------------------------
+            name : 6201045
+            x : -0.31852
+            y : 54.29402
+
+
+        Section: POINT_2 ---------------------------------------------
+            name : 6201050
+            x : 0.44699
+            y : 53.2449
+
+
+        Section: POINT_3 ---------------------------------------------
+            name : 6201059
+            x : 1.81717
+            y : 52.47586
+
+
+        Section: POINT_4 ---------------------------------------------
+            name : 6201047
+            x : -1.47835
+            y : 55.18517
+
+
+        Section: POINT_5 ---------------------------------------------
+            name : A121_
+            x : 3.81663
+            y : 55.41664
+
+
+        Section: POINT_6 ---------------------------------------------
+            name : Europlatform2
+            x : 3.27639
+            y : 51.99861
+
+
+        Section: POINT_7 ---------------------------------------------
+            name : F3platform
+            x : 4.7275
+            y : 54.85389
+
+
+        Section: POINT_8 ---------------------------------------------
+            name : IJmuidenMunitiestort_
+            x : 4.05833
+            y : 52.55
+
+
+        Section: POINT_9 ---------------------------------------------
+            name : J61
+            x : 2.95
+            y : 53.81663
+
+
+        Section: POINT_10 --------------------------------------------
+            name : K13a_
+            x : 3.22
+            y : 53.21778
+
+
+        Section: POINT_11 --------------------------------------------
+            name : L91_
+            x : 4.9607
+            y : 53.6138
+
+
+        Section: POINT_12 --------------------------------------------
+            name : Nymindegab
+            x : 7.941
+            y : 55.81
+
+
+        Section: POINT_13 --------------------------------------------
+            name : Oosterschelde11
+            x : 3.48122
+            y : 51.64379
+
+
+        Section: POINT_14 --------------------------------------------
+            name : Q1_
+            x : 4.1506
+            y : 52.9264
+
+
+        Section: POINT_15 --------------------------------------------
+            name : WaddenEierlandseGat
+            x : 4.66167
+            y : 53.27694
+
+
+        Section: POINT_16 --------------------------------------------
+            name : WesthinderBuoy
+            x : 2.4358
+            y : 51.3811
+
+
+====================== Point Output Information ======================
+
+  Element      x (degree)      y (degree)           z (m)  code
+
+     1465      7.89397533     55.83068067    -20.25902621    12
+======================================================================
+
+
 ======================== COMPUTATION STARTED =========================
 
 
@@ -670,11 +833,11 @@ Target: FemEngineSW
  
 ------------------------- Data File Summary --------------------------
   Creator: 
-  File   : C:\Users\muje\MIKE SW\Input\DWF_Setup_v1.sw - Result Files\Area.dfsu
+  File   : C:\Users\muje\MIKE SW\Input\DWF_Setup.sw - Result Files\Area.dfsu
   Title  : Output 1
 
   Start date  Start time  Sets   Interval  Unit
-  2022-01-01    00:00:00 52555        600  second
+  2022-01-01    00:00:00 35039       1800  second
 
   Static items:
   Item name            Item type               Minimum    Maximum Unit
@@ -690,25 +853,63 @@ Target: FemEngineSW
 
   Dynamic items:
   Item name            Item type               Minimum    Maximum Unit
-  Sign. Wave Height    Significant wave hei          0   9.171737 meter
-  Peak Wave Period     Wave period            0.785564  23.920465 second
-  Wave Period, T02     Wave period            0.614441   12.82753 second
-  Mean Wave Direction  Mean Wave Direction  1.7149E-07        360 degree
-  x-comp. of wave heig u-velocity component  -8.044542   7.396591 meter/sec
-  y-comp. of wave heig v-velocity component  -7.506837   5.802329 meter/sec
-  Wind speed           Wind speed             0.000483  27.650057 meter/sec
-  Wind direction       Wind Direction       4.0395E-07        360 degree
+  Sign. Wave Height    Significant wave hei          0   9.679369 meter
+  Peak Wave Period     Wave period            0.785564  23.737379 second
+  Wave Period, T02     Wave period            0.615202  12.970429 second
+  Mean Wave Direction  Mean Wave Direction  1.9004E-08        360 degree
+----------------------------------------------------------------------
+ 
+------------------------- Data File Summary --------------------------
+  Creator: 
+  File   : C:\Users\muje\MIKE SW\Input\DWF_Setup.sw - Result Files\Points_spectral.dfsu
+  Title  : Output 2
+
+  Start date  Start time  Sets   Interval  Unit
+  2022-01-01    00:00:00 35039       1800  second
+
+  Static items:
+  Item name            Item type               Minimum    Maximum Unit
+  Node id              Grid Codes                    1       1369 Integer
+  X-coord              Latitude/longitude    -1.337873   1.337873 degree
+  Y-coord              Latitude/longitude    -1.337873   1.337873 degree
+  Z-coord              Item geometry 3-dime        -10        -10 meter
+  Code                 Grid Codes                    0          0 Integer
+  Element id           Grid Codes                    1       1296 Integer
+  Element type         Grid Codes                   25         25 Integer
+  No of nodes          Grid Codes                    4          4 Integer
+  Connectivity         Grid Codes                    1       1369 Integer
+  Frequency            Wave frequency         0.032999    1.27297 hertz
+  Direction            Wave direction                0   6.108653 radian
+
+  Dynamic items:
+  Item name            Item type               Minimum    Maximum Unit
+  Nymindegab: Energy d Wave energy density           0   2.030497 meter^2*sec/deg
+  A121_: Energy densit Wave energy density           0   2.470103 meter^2*sec/deg
+  F3platform: Energy d Wave energy density           0   1.676302 meter^2*sec/deg
+  L91_: Energy density Wave energy density           0   1.433288 meter^2*sec/deg
+  WaddenEierlandseGat: Wave energy density           0   0.967512 meter^2*sec/deg
+  6201059: Energy dens Wave energy density           0    0.38684 meter^2*sec/deg
+  Europlatform2: Energ Wave energy density           0   1.061966 meter^2*sec/deg
+  IJmuidenMunitiestort Wave energy density           0   0.823048 meter^2*sec/deg
+  J61: Energy density  Wave energy density           0   1.135111 meter^2*sec/deg
+  K13a_: Energy densit Wave energy density           0   0.790954 meter^2*sec/deg
+  Oosterschelde11: Ene Wave energy density           0   0.328248 meter^2*sec/deg
+  Q1_: Energy density  Wave energy density           0   0.809048 meter^2*sec/deg
+  WesthinderBuoy: Ener Wave energy density           0   0.754751 meter^2*sec/deg
+  6201045: Energy dens Wave energy density           0   1.266744 meter^2*sec/deg
+  6201050: Energy dens Wave energy density           0   0.329759 meter^2*sec/deg
+  6201047: Energy dens Wave energy density           0   2.712297 meter^2*sec/deg
 ----------------------------------------------------------------------
  
 ======================================================================
 
 
 ================ Spectral Wave Simulation Diagnostic =================
-  Number of time steps         : 105108
-  Duration time (s)             : 31532400
-  Minimum time step (s)         : 300
-  Maximum time step (s)         : 300
-  Level factor                  : 3.55932
+  Number of time steps         : 179475
+  Duration time (s)             : 63068400
+  Minimum time step (s)         : 195.3125
+  Maximum time step (s)         : 500
+  Level factor                  : 3.971879
 ======================================================================
 
 
@@ -716,13 +917,13 @@ Target: FemEngineSW
   ------------------------------------------------------------------
   Task                                      CPU time    Elapsed time
   ------------------------------------------------------------------
-  Spectral Wave Module                      78377.73        79375.69
-    Update forcings                           108.95          113.84
-    Transport step                          18815.98        19065.88
-    Growth/decay step                       44894.70        45315.18
-    Other calculations                      14556.28        14879.98
+  Spectral Wave Module                     161639.88       163888.42
+    Update forcings                           351.56          377.81
+    Transport step                          36693.92        37189.57
+    Growth/decay step                       76283.78        77133.44
+    Other calculations                      48306.84        49185.52
   ------------------------------------------------------------------
-  Total                                     78377.73        79375.69
+  Total                                    161639.88       163888.42
   ------------------------------------------------------------------
 ======================================================================
 
@@ -731,10 +932,10 @@ Target: FemEngineSW
   ------------------------------------------------------------------
   Task                                      CPU time    Elapsed time
   ------------------------------------------------------------------
-  Halo data                                  4064.67         4199.94
-  Additional data                            3600.14         3656.46
+  Halo data                                  8360.70         8678.01
+  Additional data                            7304.11         7438.50
   ------------------------------------------------------------------
-  Total                                      7671.75         7859.16
+  Total                                     15681.75        16122.92
   ------------------------------------------------------------------
 ======================================================================
 
@@ -743,18 +944,18 @@ Target: FemEngineSW
   ------------------------------------------------------------------
   Task                                      CPU time    Elapsed time
   ------------------------------------------------------------------
-  Pre-processing                                0.66            3.23
-  Calculation                               78377.89        79375.87
-  License check                                24.39          550.75
-  Post-processing                             520.98         1178.02
+  Pre-processing                                0.64            1.85
+  Calculation                              161640.05       163888.63
+  License check                                16.05          211.35
+  Post-processing                             663.62         1311.45
   ------------------------------------------------------------------
-  Total                                     78924.33        81108.18
+  Total                                    162320.52       165413.39
   ------------------------------------------------------------------
 ======================================================================
 
 
 ============================ Memory Usage ============================
-  Peak memory usage (MB)                                      291.10
+  Peak memory usage (MB)                                      297.06
 ======================================================================
 
 

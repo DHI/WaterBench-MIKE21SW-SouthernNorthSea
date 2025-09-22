@@ -1,4 +1,4 @@
-# Hydrodynamic model of the Southern North Sea: Outputs
+# Spectral wave model of the Southern North Sea: Outputs
 The content of this folder is cited by:
 
 > DHI. (2025). Spectral wave model of the Southern North Sea: MIKE21 SW model setup, outputs and observation data (1.0) [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.17099654](https://doi.org/10.5281/zenodo.17099654)

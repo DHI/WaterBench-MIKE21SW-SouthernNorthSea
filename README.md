@@ -1,8 +1,11 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17099654.svg)](https://doi.org/10.5281/zenodo.17099654)
+
+
 # Spectral wave model of the Southern North Sea
 
 This README provides practical and background information on the dataset. The dataset can be cited as:
 
-> DHI. (2025). Spectral wave model of the Southern North Sea: MIKE 21 SW model setup, outputs and observation data (1.0) [Data set]. Zenodo. [TODO:INSERT LINK](LINK)
+> DHI. (2025). Spectral wave model of the Southern North Sea: MIKE 21 SW model setup, outputs and observation data (1.0) [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.17099654](https://doi.org/10.5281/zenodo.17099654)
 
 See the [license](license.txt) for details on data usage.
 

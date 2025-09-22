@@ -1,4 +1,4 @@
-// Created     : 2025-09-11 10:14:36
+// Created     : 2025-09-17 12:50:30
 // DLL         : C:\Program Files (x86)\DHI\MIKE Zero\2025\bin\x64\pfs2004.dll
 // Version     : 23.0.3.18318
 
@@ -200,7 +200,7 @@
          format = 3
          constant_speed = 0.0
          constant_direction = 0.0
-         file_name = |..Wind.dfs2|
+         file_name = |.\Wind.dfs2|
          item_number_for_x_velocity = 1
          item_number_for_y_velocity = 2
          item_name_for_x_velocity = 'U'
@@ -667,8 +667,8 @@
 
       [OUTPUTS]
          Touched = 1
-         MzSEPfsListItemCount = 2
-         number_of_outputs = 2
+         MzSEPfsListItemCount = 3
+         number_of_outputs = 3
          [OUTPUT_1]
             Touched = 1
             include = 1
@@ -1146,6 +1146,290 @@
             EndSect  // SPECTRAL_PARAMETERS
 
          EndSect  // OUTPUT_2
+
+         [OUTPUT_3]
+            Touched = 1
+            include = 1
+            title = 'Output 3'
+            file_name = 'Points.dfs0'
+            type = 1
+            format = 0
+            flood_and_dry = 2
+            coordinate_type = 'LONG/LAT'
+            zone = 0
+            input_file_name = ||
+            input_format = 1
+            interpolation_type = 2
+            use_end_time = 1
+            first_time_step = 0
+            last_time_step = 35038
+            time_step_frequency = 1
+            number_of_points = 16
+            [POINT_1]
+               name = '6201045'
+               x = -0.31852
+               y = 54.29402
+            EndSect  // POINT_1
+
+            [POINT_2]
+               name = '6201050'
+               x = 0.44699
+               y = 53.2449
+            EndSect  // POINT_2
+
+            [POINT_3]
+               name = '6201059'
+               x = 1.81717
+               y = 52.47586
+            EndSect  // POINT_3
+
+            [POINT_4]
+               name = '6201047'
+               x = -1.47835
+               y = 55.18517
+            EndSect  // POINT_4
+
+            [POINT_5]
+               name = 'A121_'
+               x = 3.81663
+               y = 55.41664
+            EndSect  // POINT_5
+
+            [POINT_6]
+               name = 'Europlatform2'
+               x = 3.27639
+               y = 51.99861
+            EndSect  // POINT_6
+
+            [POINT_7]
+               name = 'F3platform'
+               x = 4.7275
+               y = 54.85389
+            EndSect  // POINT_7
+
+            [POINT_8]
+               name = 'IJmuidenMunitiestort_'
+               x = 4.05833
+               y = 52.55
+            EndSect  // POINT_8
+
+            [POINT_9]
+               name = 'J61'
+               x = 2.95
+               y = 53.81663
+            EndSect  // POINT_9
+
+            [POINT_10]
+               name = 'K13a_'
+               x = 3.22
+               y = 53.21778
+            EndSect  // POINT_10
+
+            [POINT_11]
+               name = 'L91_'
+               x = 4.9607
+               y = 53.6138
+            EndSect  // POINT_11
+
+            [POINT_12]
+               name = 'Nymindegab'
+               x = 7.941
+               y = 55.81
+            EndSect  // POINT_12
+
+            [POINT_13]
+               name = 'Oosterschelde11'
+               x = 3.48122
+               y = 51.64379
+            EndSect  // POINT_13
+
+            [POINT_14]
+               name = 'Q1_'
+               x = 4.1506
+               y = 52.9264
+            EndSect  // POINT_14
+
+            [POINT_15]
+               name = 'WaddenEierlandseGat'
+               x = 4.66167
+               y = 53.27694
+            EndSect  // POINT_15
+
+            [POINT_16]
+               name = 'WesthinderBuoy'
+               x = 2.4358
+               y = 51.3811
+            EndSect  // POINT_16
+
+            [LINE]
+               number_of_points = 2
+               [POINT_1]
+                  x = -2.4591
+                  y = 49.675121
+               EndSect  // POINT_1
+
+               [POINT_2]
+                  x = 8.837038
+                  y = 56.0
+               EndSect  // POINT_2
+
+               npoints = 20
+            EndSect  // LINE
+
+            [AREA]
+               number_of_points = 4
+               [POINT_1]
+                  x = -2.57206138
+                  y = 49.61187220999999
+               EndSect  // POINT_1
+
+               [POINT_2]
+                  x = -2.57206138
+                  y = 56.06324879
+               EndSect  // POINT_2
+
+               [POINT_3]
+                  x = 8.94999938
+                  y = 56.06324879
+               EndSect  // POINT_3
+
+               [POINT_4]
+                  x = 8.94999938
+                  y = 49.61187220999999
+               EndSect  // POINT_4
+
+               orientation = 0.0
+               x_origo = -2.4591
+               x_ds = 0.5945335789473684
+               x_npoints = 20
+               y_origo = 49.675121
+               y_ds = 0.5945335789473684
+               y_npoints = 12
+               z_origo = -103.190040588379
+               z_ds = 14.47409407297771
+               z_npoints = 10
+            EndSect  // AREA
+
+            [INTEGRAL_WAVE_PARAMETERS]
+               Touched = 0
+               type_of_spectrum = 1
+               minimum_frequency = 0.033
+               maximum_frequency = 1.412996793136124
+               separation_of_wind_sea_and_swell = 5
+               threshold_frequency = 0.125
+               maximum_threshold_frequency = 0.125
+               c_wave_age = 0.83
+               p_wave_age = 1.0
+               hm0_minimum = 0.01
+               type_of_h_max = 3
+               duration = 10800.0
+               distance_above_bed_for_particle_velocity = 0.0
+               minimum_direction = 0.0
+               maximum_direction = 360.0
+               [Total_wave_parameters]
+                  Significant_wave_height = 1
+                  Maximum_wave_height = 0
+                  Peak_wave_period = 1
+                  Wave_period_t01 = 0
+                  Wave_period_t02 = 1
+                  Wave_period_tm10 = 0
+                  Peak_wave_direction = 0
+                  Mean_wave_direction = 1
+                  Directional_standard_deviation = 0
+                  Wave_velocity_components = 0
+                  Radiation_stresses = 0
+                  Particle_velocities = 0
+                  Wave_power = 0
+                  Surface_Stokes_drift = 0
+               EndSect  // Total_wave_parameters
+
+               [Wind_sea_parameters]
+                  Significant_wave_height = 0
+                  Maximum_wave_height = 0
+                  Peak_wave_period = 0
+                  Wave_period_t01 = 0
+                  Wave_period_t02 = 0
+                  Wave_period_tm10 = 0
+                  Peak_wave_direction = 0
+                  Mean_wave_direction = 0
+                  Directional_standard_deviation = 0
+                  Wave_velocity_components = 0
+                  Radiation_stresses = 0
+                  Particle_velocities = 0
+                  Wave_power = 0
+                  Surface_Stokes_drift = 0
+               EndSect  // Wind_sea_parameters
+
+               [Swell_parameters]
+                  Significant_wave_height = 0
+                  Maximum_wave_height = 0
+                  Peak_wave_period = 0
+                  Wave_period_t01 = 0
+                  Wave_period_t02 = 0
+                  Wave_period_tm10 = 0
+                  Peak_wave_direction = 0
+                  Mean_wave_direction = 0
+                  Directional_standard_deviation = 0
+                  Wave_velocity_components = 0
+                  Radiation_stresses = 0
+                  Particle_velocities = 0
+                  Wave_power = 0
+                  Surface_Stokes_drift = 0
+               EndSect  // Swell_parameters
+
+            EndSect  // INTEGRAL_WAVE_PARAMETERS
+
+            [INPUT_PARAMETERS]
+               Touched = 0
+               Surface_elevation = 0
+               Water_depth = 0
+               Current_velocity_components = 0
+               Wind_speed = 0
+               Wind_direction = 0
+               Ice_concentration = 0
+               Water_density = 0
+               Air_density = 0
+               Fluid_mud_thickness = 0
+               Mud_bulk_density = 0
+               Mud_dry_density = 0
+            EndSect  // INPUT_PARAMETERS
+
+            [MODEL_PARAMETERS]
+               Touched = 0
+               Neutral_wind_speed = 0
+               Wind_friction_speed = 0
+               Roughness_length = 0
+               Drag_coefficient = 0
+               Charnock_constant = 0
+               Friction_coefficient = 0
+               Breaking_parameter_gamma = 0
+               Courant_number = 0
+               Time_step_factor = 0
+               Convergence_angle = 0
+               Length = 0
+               Area = 0
+               Threshold_period = 0
+               Roller_area = 0
+               Roller_dissipation = 0
+               Breaking_index = 0
+            EndSect  // MODEL_PARAMETERS
+
+            [SPECTRAL_PARAMETERS]
+               Touched = 0
+               separation_of_wind_sea_and_swell = 5.0
+               threshold_frequency = 0.125
+               maximum_threshold_frequency = 0.125
+               c_wave_age = 0.83
+               p_wave_age = 1.0
+               wave_energy = 1
+               wave_action = 0
+               zeroth_moment_of_wave_action = 0
+               first_moment_of_wave_action = 0
+               wave_energy_wind_sea = 0
+               wave_energy_swell = 0
+            EndSect  // SPECTRAL_PARAMETERS
+
+         EndSect  // OUTPUT_3
 
       EndSect  // OUTPUTS
 

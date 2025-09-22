@@ -108,24 +108,45 @@ In this case, the model is validated using both in-situ measurements from statio
 ![](figures/swh_and_altimetry.png)
 
 
-![](figures/swh_stations.png)
-![](figures/altimetry_coverage.png)
-
-
-
-
-
 Below is an example comparison between observational data from a measurement station and the MIKE 21 simulation, followed by a comparison with satellite altimetry data. Many more similar plots can be found in the validation notebooks `code/model_validation_*.ipynb`.
 
-![](figures/modelskill_comparison_Europlatform.png)
+![](figures/modelskill_comparison_J61.png)
 ![](figures/altimetry_comparison.png)
 
 ## Data sources
 
+- **Observations**: 
 - **Altimetry data**: Only data points marked as "good" by quality flags are included.
+
+| Data   | Source|  Citation | License | 
+| -------- | ------- | ------- | ------- |
+| Mesh | The mesh is developed by DHI. | Repository citation, see [the top](#Hydrodynamic-model-of-the-Southern-North-Sea) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Bathymetry | The bathymetry is based on: <br> 1: the EMODnet Bathymetry Digital Terrain Model (DTM) 2020. <br> 2: Rijkswaterstaat’s bathymetric measurements along the Dutch coasts <br> 3: FUGRO’s bathymetric measurements at the HKZ, HKN and HKW wind farm zones <br> 4: MMT SWEDEN AB’s bathymetric survey for the TNW wind farm zone <br> 5: GEOxyz’s bathymetric survey of IJmuiden Ver wind farm zone (alpha and beta) <br> 6: FUGRO’s bathymetric survey of IJmuiden Ver Wind Farm Zone (gamma). <br>The bathymetry data is interpolated onto the mesh. | 1: EMODnet Bathymetry Consortium (2020). EMODnet Digital Bathymetry (DTM 2020).EMODnet Bathymetry Consortium [https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a](https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a) <br>For the rest, more information can be found in: DHI, "Metocean Assessment Modelling Report, IJmuiden Ver Wind Farm Zone", Dec 2023, URL: [https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf) (accessed: 2024-11-13) | The data has been interpolated to the mesh resolution such that the original resolution is no longer represented nor reproduceable from the attached mesh. Hence, the mesh with the depth estimates is shared under the same licence as the rest of this repository, namely [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en). |
+| Wind and Air pressure | A subsampled version of the high-resolution ERA5+Weather Research & Forecasting model (WRF) data used for the [RVO project](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf). The data is subsampled in space to 16km and temporally to hourly data.  | Repository citation, see [the top](#Hydrodynamic-model-of-the-Southern-North-Sea). | Only non-commercial use: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en). |
+| Boundary condition | A subsampled version of the high-resolution data from a regional model used for the [RVO project](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf). The data is subsampled to 16 spatial points on the North boundary and 9 points in the South.  | Original citation: DHI, "DHI North Europe Hydrodynamic Model forced with ERA5 Validation Report," 2023. For citing the subsampled data, cite this repository, see [the top](#Hydrodynamic-model-of-the-Southern-North-Sea).  | Only non-commercial use: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en). |
+| Sea levels in measurement stations | Data from the stations K13a, J61, F3 platform and Europlatform is retrieved through the [Copernicus Marine Service (CMEMS, or Copernicus Marine Environmental Monitoring Service)](https://www.copernicus.eu/en/copernicus-services/marine). More specifically, the open download service dashboard, which can be found [here](https://marineinsitu.eu/dashboard/). The data from the three other stations has been retrieved from the Netherlands Enterprise Agency through the websites: [IJVA](https://offshorewind.rvo.nl/page/view/4c4cb8e3-a1c7-404f-917f-a2f6e0d8c803/wind-en-water-ijmuiden-ver), [DDW1A](https://offshorewind.rvo.nl/page/view/ac0e26d7-1943-417f-b0f8-6fc3452595c1/wind-en-water-doordewind) and [NWA](https://offshorewind.rvo.nl/page/view/500ae8a0-e3bc-467f-81fe-9196fe42413a/wind-en-water-nederwiek).  | Copernicus Marine Service, "Atlantic- European North West Shelf- Ocean In-Situ Near Real Time observations" (2024), [https://doi.org/10.48670/moi-00045](https://doi.org/10.48670/moi-00045). | See full license [here](https://marine.copernicus.eu/user-corner/service-commitments-and-licence). Excerpt: "The Licensee is hereby granted a worldwide, non exclusive, royalty free, perpetual licence, (subject to the terms and conditions of this agreement) to: (a) make and use such reasonable copies of Copernicus Marine Service Products for internal use and back up purposes; (b) modify, adapt, develop, create and distribute Value Added Products or Derivative Work from Copernicus Marine Service Products for any purpose; (c) redistribute, disseminate any Copernicus Marine Service Product in their original form via any media." |
+| Current velocities in measurement stations | Data is retrieved through the [Copernicus Marine Service (CMEMS, or Copernicus Marine Environmental Monitoring Service)](https://www.copernicus.eu/en/copernicus-services/marine). More specifically, the open download service dashboard, which can be found [here](https://marineinsitu.eu/dashboard/).  | Copernicus Marine Service, "Atlantic- European North West Shelf- Ocean In-Situ Near Real Time observations" (2024), [https://doi.org/10.48670/moi-00045](https://doi.org/10.48670/moi-00045). | Same as above (CMEMS) |
+
+
+
+### Altimetry data
+
+The altimetry data is based on satellite observations and was downloaded via [DHI's services for marine observation data](https://altimetry.dhigroup.com/). The satellites and data sources are listed below:
+
+| Satellite name    | Owner|  Link |
+| -------- | ------- | ------- |
+| Sentinel-3A (3a) | European Space Agency (ESA) |  [https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments](https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments) |
+| Sentinel-3B (3b) | European Space Agency (ESA) | [https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments](https://sentiwiki.copernicus.eu/web/s3-altimetry-instruments) |
+| Sentinel-6A (6a) | European commission, ESA, EUMETSAT, NASA and NOAA |  [https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-6/data-products](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-6/data-products) |
+| CryoSat-2 (c2) | European Space Agency (ESA) |  [https://earth.esa.int/eogateway/catalog/cryosat-products](https://earth.esa.int/eogateway/catalog/cryosat-products)  |
+| SARAL (sa) | French National Space Agency (CNES) and Indian Space Research Organisation (ISRO) | [https://podaac.jpl.nasa.gov/dataset/ALTIKA_SARAL_L2_OST_XOGDR](https://podaac.jpl.nasa.gov/dataset/ALTIKA_SARAL_L2_OST_XOGDR) |
+| Jason-3 (j3) | NASA, CNES, EUMETSAT, NOAA | [https://sealevel.jpl.nasa.gov/missions/jason-3/summary/](https://sealevel.jpl.nasa.gov/missions/jason-3/summary/) |
+
+
 
 
 ## Other stuff
+
 
 
 Copernicus Marine: Download data from dashboard: https://marineinsitu.eu/dashboard/

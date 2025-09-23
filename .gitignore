@@ -5,7 +5,6 @@
 .venv
 
 # UV stuff
-pyproject.toml
 .python-version
 uv.lock
 

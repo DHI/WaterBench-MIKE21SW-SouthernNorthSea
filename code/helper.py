@@ -43,7 +43,7 @@ def get_tp_point_obs(station_file):
 
 def get_mwd_point_obs(station_file):
     """Get wave period point observations as list of PointObservation objects"""
-    q = ms.Quantity(name="Mean wave direction", unit="degree")
+    q = ms.Quantity(name="Mean wave direction", unit="degree", is_directional=True)
     mwdlist = []
 
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)

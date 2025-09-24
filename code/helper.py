@@ -34,10 +34,10 @@ def get_tp_point_obs(station_file):
                 continue
             df = pd.read_csv(obs_fldr + f"{i}.csv", index_col=0)
             df.index = pd.to_datetime(df.index, format="ISO8601")
-            # Check is VTPK column exists
+            # Check that VTPK column exists
             if 'VTPK' not in df.columns:
                 continue
-            o = ms.PointObservation(df.VTPK, x=row['lon'], y=row['lat'], name=i, quantity=q)
+            o = ms.PointObservation(df, item='VTPK', x=row['lon'], y=row['lat'], name=i, quantity=q, aux_items='VHM0')
             tplist.append(o)
     return tplist
 

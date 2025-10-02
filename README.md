@@ -125,7 +125,6 @@ In general for the observations: Only active stations/bouys are used. The time i
 
 ## Air pressure is provided but not needed for the SW model, maybe you can mention this to avoid confusion as in 'why' is there (is there because is needed for HD model)
 ## I wrote a comment but rewrote it now. I found the files stations/stations_subet and stations time, but would be better structured in another folder, like a sub folder `measurement locations` or similar. Because now we got actual data (lots of csv files with wave data) but also files with metadata at the same level. Just a recommentation, like Altimetry is in its subfolder already.
-## Also some stations end in `blabla_.csv` while others in `blabla.csv`... not sure why. 
 
 
 | Data   | Source|  Citation | License | 

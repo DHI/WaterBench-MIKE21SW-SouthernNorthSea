@@ -2,7 +2,6 @@
 The code folder is organized in the following way
 
 - README.md
-- license
 - explore_full_spectral_model_result_data.ipynb
     + Link: [`explore_full_spectral_model_result_data`](explore_full_spectral_model_result_data.ipynb)
     + Notebook demonstrating how to open and analyze **full spectral model results** (directional wave spectra).  
@@ -27,7 +26,6 @@ The code folder is organized in the following way
 - requirements.txt
     + Link: ['requirements'](requirements.txt)
     + Python dependencies required to run the notebooks and scripts.  
-
 
 
 # Python and libraries used in the notebooks

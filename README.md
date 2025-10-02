@@ -82,7 +82,6 @@ A simulation can be performed with the [MIKE modelling software](https://www.dhi
 - the water level and currents in the domain
 - wind velocities in the domain.
 
-## Input folder link is broken
 This input data can be found in the [/input](/input) folder. Model parameters, e.g. bed resistance constant, can be calibrated by comparing the model simulations to observational data. 
 
 The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables in the table below.

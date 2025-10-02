@@ -6,8 +6,9 @@ import modelskill as ms
 
 obs_fldr = "../observations/"
 alt_fldr = "../observations/altimetry/"
+meas_fldr = "../observations/measurements/"
 
-def get_swh_point_obs(obs_fldr, station_file):
+def get_swh_point_obs(obs_fldr, meas_fldr, station_file):
     """Get wave height point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Significant Wave Height", unit="meter")
     swhlist = []
@@ -15,14 +16,14 @@ def get_swh_point_obs(obs_fldr, station_file):
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)
 
     for i, row in df_stn.iterrows():
-        df = pd.read_csv(obs_fldr + f"{i}.csv", index_col=0)
+        df = pd.read_csv(meas_fldr + f"{i}.csv", index_col=0)
         df.index = pd.to_datetime(df.index, format="ISO8601")
         o = ms.PointObservation(df.VHM0, x=row['lon'], y=row['lat'], name=i, quantity=q)
         swhlist.append(o)
 
     return swhlist
 
-def get_tp_point_obs(station_file):
+def get_tp_point_obs(obs_fldr, meas_fldr, station_file):
     """Get wave period point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Wave period", unit="s")
     tplist = []
@@ -30,9 +31,9 @@ def get_tp_point_obs(station_file):
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)
 
     for i, row in df_stn.iterrows():
-            if not Path(obs_fldr + f"{i}.csv").exists():
+            if not Path(meas_fldr + f"{i}.csv").exists():
                 continue
-            df = pd.read_csv(obs_fldr + f"{i}.csv", index_col=0)
+            df = pd.read_csv(meas_fldr + f"{i}.csv", index_col=0)
             df.index = pd.to_datetime(df.index, format="ISO8601")
             # Check that VTPK column exists
             if 'VTPK' not in df.columns:
@@ -41,7 +42,7 @@ def get_tp_point_obs(station_file):
             tplist.append(o)
     return tplist
 
-def get_mwd_point_obs(station_file):
+def get_mwd_point_obs(obs_fldr, meas_fldr, station_file):
     """Get wave period point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Mean wave direction", unit="degree", is_directional=True)
     mwdlist = []
@@ -49,9 +50,9 @@ def get_mwd_point_obs(station_file):
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)
 
     for i, row in df_stn.iterrows():
-            if not Path(obs_fldr + f"{i}.csv").exists():
+            if not Path(meas_fldr + f"{i}.csv").exists():
                 continue
-            df = pd.read_csv(obs_fldr + f"{i}.csv", index_col=0)
+            df = pd.read_csv(meas_fldr + f"{i}.csv", index_col=0)
             df.index = pd.to_datetime(df.index, format="ISO8601")
             # Check is VMDR column exists
             if 'VMDR' not in df.columns:

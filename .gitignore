@@ -1,5 +1,11 @@
 /__pycache__
-/input
+
+# Large input files
+input/AreaHD.dfsu
+input/Wind.dfs2
+
+
+# Output
 /output
 /output_old
 .venv

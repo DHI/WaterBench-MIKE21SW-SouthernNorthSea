@@ -29,4 +29,4 @@ def plot_timeseries_currents(cc, title):
     plt.tight_layout()
     plt.show()
 
-    
+## these functions were not used at all I see. Maybe remove file?

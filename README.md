@@ -29,7 +29,7 @@ This dataset is designed to support educational, research, and exploratory activ
 The repository is organized in the following way
 
 - README.md
-- licence
+- license
 - model
     + MIKE SW model setup file (.sw)
     + log file (.log)
@@ -82,15 +82,16 @@ A simulation can be performed with the [MIKE modelling software](https://www.dhi
 - the water level and currents in the domain
 - wind velocities in the domain.
 
+## Input folder link is broken
 This input data can be found in the [/input](/input) folder. Model parameters, e.g. bed resistance constant, can be calibrated by comparing the model simulations to observational data. 
 
 The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables in the table below.
 
-| Item | Variable | Unit |
+| Item | Variable | Unit | Acronym (Hm0,Tp, etc : Add column)
 | ------------- | ------------- | ------------- |
 | 0 | Significant wave height | meter  |
 | 1 | Peak wave period | second |
-| 2 | Wave period, T02 | second |
+| 2 | Mean Wave period, T02 | second |
 | 3 | Mean wave direction   | degree |
 
 These results are provided as a separate file on [Zenodo](https://doi.org/10.5281/zenodo.17099654). After running a simulation, a log file is generated. For the benchmark simulation, this log file is available in the [/model](/model) folder and contains details on parameter settings and runtime.
@@ -119,9 +120,14 @@ Several data sources contribute to this case, as outlined below.
 The following changes have been made to the data:
 In general for the observations: Only active stations/bouys are used. The time index is converted to UTC. More specifically:
 - **Wave height observations**: A few outliers and zero observations (caused by a station malfunction) were removed.
-- **Peak wave period observations**: Peak wave period was only considered when the significant wave height is larger than 1.0 m, since lower wave heights may result in inaccurate measurements of the peak wave period.
+- **Peak wave period observations**: Peak wave period was only considered when the significant wave height is larger than 1.0 m, since lower wave heights may result in inaccurate measurements of the peak wave period due to the discrete nature of the parameter.
 - **Mean wave direction observations**: Defined as directional data, with circular statistics applied when calculating error metrics.
 - **Altimetry data**: Only data points marked as "good" by quality flags are included.
+
+## Air pressure is provided but not needed for the SW model, maybe you can mention this to avoid confusion as in 'why' is there (is there because is needed for HD model)
+## I wrote a comment but rewrote it now. I found the files stations/stations_subet and stations time, but would be better structured in another folder, like a sub folder `measurement locations` or similar. Because now we got actual data (lots of csv files with wave data) but also files with metadata at the same level. Just a recommentation, like Altimetry is in its subfolder already.
+## Also some stations end in `blabla_.csv` while others in `blabla.csv`... not sure why. 
+
 
 | Data   | Source|  Citation | License | 
 | -------- | ------- | ------- | ------- |

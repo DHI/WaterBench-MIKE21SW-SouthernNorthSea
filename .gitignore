@@ -20,7 +20,7 @@ raw-data
 download_copernicus_data.ipynb
 copernicus_utils.py
 
-
+.feedback
 .lit
 
 # Notebook for downloading altimetry data

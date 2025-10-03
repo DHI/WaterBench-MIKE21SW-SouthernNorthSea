@@ -1,5 +1,12 @@
-modelskill_comparison_Cromer.png  : Water level comparisons, but no mentioning of WL anywhere else (thus far), and the SW model does not output WL... I feel like this came from somewhere else. This comment sort of applies to all Water Level (surface elevation) comparisons. I feel like water level validation plots should be removed, otherwise you would need to explain Mike21HD and links and sources etc. Same for Currents, it is not part of the SW module.
+modelskill_comparison_Cromer.png  : Water level comparisons, but no mentioning of WL anywhere else (thus far), and the SW model does not output WL...
+I feel like this came from somewhere else.
+This comment sort of applies to all Water Level (surface elevation) comparisons.
+I feel like water level validation plots should be removed, otherwise you would need to explain Mike21HD and links and sources etc.
+Same for Currents, it is not part of the SW module.
 
-stations_currents.png  :  An empty plot can be removed and replaced with a sentence "there is no measured currents data available" or something like that.
+DONE: stations_currents.png  :  An empty plot can be removed and replaced with a sentence "there is no measured currents data available" or something like that.
 
-wind_conditions_2022-05-01.png : Figure on the right does not look greati with viridis, since it creates a sharp gradient from 360 to 0 degrees, but it is the same value almost. There are `cyclic` color maps to choose from for cyclic variables, eg https://matplotlib.org/stable/users/explain/colors/colormaps.html#cyclic , but there are more. ps: I just saw the notebook now, maybe you can ignore this comment.
+wind_conditions_2022-05-01.png : Figure on the right does not look greati with viridis, since it creates a sharp gradient from 360 to 0 degrees, but it is the same value almost. 
+There are `cyclic` color maps to choose from for cyclic variables, eg https://matplotlib.org/stable/users/explain/colors/colormaps.html#cyclic , but there are more.
+ps: I just saw the notebook now, maybe you can ignore this comment.
+

@@ -1,0 +1,45 @@
+/__pycache__
+
+# Large input files
+input/AreaHD.dfsu
+input/Wind.dfs2
+
+
+# Output
+/output
+/output_old
+.venv
+
+# UV stuff
+.python-version
+uv.lock
+
+# Copernicus
+copernicus-data
+raw-data
+download_copernicus_data.ipynb
+copernicus_utils.py
+
+.feedback
+.lit
+
+# Notebook for downloading altimetry data
+__download_altimetry_data__.ipynb
+
+# Notebook for formatting input files
+__format_input_files__.ipynb
+__create_output_sample__.ipynb
+__data_cleaning__.ipynb
+
+# Files for point obs extraction
+point_extraction.dxfm
+point_extraction.log
+
+# Temp 
+README_HD.md
+input_old
+
+# Zip-files
+MIKE21SW-SouthernNorthSea-input.zip
+MIKE21SW-SouthernNorthSea-output.zip
+WaterBench-MIKE21SW-SouthernNorthSea.zip

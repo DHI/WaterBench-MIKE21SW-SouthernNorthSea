@@ -8,7 +8,10 @@ input/Wind.dfs2
 # Output
 /output
 /output_old
+
+# Venv 
 .venv
+pyproject.toml
 
 # UV stuff
 .python-version

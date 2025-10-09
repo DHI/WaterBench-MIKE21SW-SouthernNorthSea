@@ -1,4 +1,4 @@
-// Created     : 2025-09-17 12:50:30
+// Created     : 2025-10-9 9:58:33
 // DLL         : C:\Program Files (x86)\DHI\MIKE Zero\2025\bin\x64\pfs2004.dll
 // Version     : 23.0.3.18318
 
@@ -8,11 +8,11 @@
       discretization = 2
       number_of_dimensions = 2
       number_of_meshes = 1
-      file_name = |.\Mesh_8000_elems.mesh|
+      file_name = |..\input\Mesh_8000_elems.mesh|
       type_of_reordering = 1
       number_of_domains = 16
       coordinate_type = 'LONG/LAT'
-      minimum_depth = -5.0
+      minimum_depth = 5.36566495895386
       datum_depth = 0.0
       vertical_mesh_type_overall = 1
       number_of_layers = 10
@@ -200,7 +200,7 @@
          format = 3
          constant_speed = 0.0
          constant_direction = 0.0
-         file_name = |.\Wind.dfs2|
+         file_name = |..\input\Wind.dfs2|
          item_number_for_x_velocity = 1
          item_number_for_y_velocity = 2
          item_name_for_x_velocity = 'U'
@@ -544,7 +544,7 @@
             type = 5
             format = 1
             constant_values = 1.0, 8.0, 270.0, 5.0, 0.1, 16.0, 270.0, 32.0
-            file_name = |.\SW_NorthWest_BC.dfs2|
+            file_name = |..\input\SW_NorthWest_BC.dfs2|
             item_number = 1
             item_name = '0_56: Energy density'
             type_of_soft_start = 1
@@ -575,9 +575,9 @@
             type = 5
             format = 1
             constant_values = 1.0, 8.0, 270.0, 5.0, 0.1, 16.0, 270.0, 32.0
-            file_name = |.\SW_South_BC.dfs2|
+            file_name = |..\input\SW_South_BC.dfs2|
             item_number = 1
-            item_name = '7_56: Energy density'
+            item_name = 'P1: Energy density'
             type_of_soft_start = 1
             soft_time_interval = 0.0
             reference_values = 0.0, 8.0, 270.0, 5.0, 0.0, 16.0, 270.0, 32.0
@@ -606,7 +606,7 @@
             type = 5
             format = 1
             constant_values = 1.0, 8.0, 270.0, 5.0, 0.1, 16.0, 270.0, 32.0
-            file_name = |.\SW_North_BC.dfs2|
+            file_name = |..\input\SW_North_BC.dfs2|
             item_number = 1
             item_name = '3_56: Energy density'
             type_of_soft_start = 1
@@ -637,7 +637,7 @@
             type = 5
             format = 1
             constant_values = 1.0, 8.0, 270.0, 5.0, 0.1, 16.0, 270.0, 32.0
-            file_name = |.\SW_NorthEast_BC.dfs2|
+            file_name = |..\input\SW_NorthEast_BC.dfs2|
             item_number = 1
             item_name = '6_56: Energy density'
             type_of_soft_start = 1

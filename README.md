@@ -86,12 +86,12 @@ This input data can be found in the [/input](/input) folder. Model parameters, e
 
 The model outputs are provided both as point timeseries (dfs0) and as time-varying full-domain results (dfsu) including the variables in the table below.
 
-| Item | Variable | Unit | Acronym |
-| ------------- | ------------- | ------------- | ------------- |
-| 0 | Significant wave height | meter | Hm0 |
-| 1 | Peak wave period | second | Tp |
-| 2 | Mean Wave period | second | T02 |
-| 3 | Mean wave direction | degree | Mdir |
+| Variable | Unit | Acronym |
+| ------------- | ------------- | ------------- |
+| Significant wave height | meter | Hm0 |
+| Peak wave period | second | Tp |
+| Zero crossing period | second | T02 |
+| Mean wave direction | degree | Mdir |
 
 These results are provided as a separate file on [Zenodo](https://doi.org/10.5281/zenodo.17099654). After running a simulation, a log file is generated. For the benchmark simulation, this log file is available in the [/model](/model) folder and contains details on parameter settings and runtime.
 

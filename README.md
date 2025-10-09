@@ -113,27 +113,40 @@ Below is an example comparison between observational data from a measurement sta
 ![](figures/swh_comparison_J61.png)
 ![](figures/altimetry_comparison.png)
 
-## Data sources
-Several data sources contribute to this case, as outlined below.
-
-The following changes have been made to the data:
-In general for the observations: Only active stations/bouys are used. The time index is converted to UTC. More specifically:
+## Data processing
+Only active stations and buoys were included in the analysis, and all timestamps were converted to UTC.
+The following processing steps were applied to specific observation types.
 - **Wave height observations**: A few outliers and zero observations (caused by a station malfunction) were removed.
-- **Peak wave period observations**: Peak wave period was only considered when the significant wave height is larger than 1.0 m, since lower wave heights may result in inaccurate measurements of the peak wave period due to the discrete nature of the parameter.
-- **Mean wave direction observations**: Defined as directional data, with circular statistics applied when calculating error metrics.
+- **Peak wave period observations**: Values were only consideret when the significant wave height is larger than 1.0 m, as lower wave heights may result in inaccurate measurements of the peak wave period due to the discrete nature of the parameter.
+- **Mean wave direction observations**: Treated as directional data, with circular statistics applied when calculating error metrics.
 - **Altimetry data**: Only data points marked as "good" by quality flags are included.
 
 
+## Data sources
+Several data sources contribute to this case, as outlined below.
+
+
+### Data sources necessary to run the model
 | Data   | Source|  Citation | License | 
 | -------- | ------- | ------- | ------- |
 | Mesh | The mesh is developed by DHI. | Repository citation, see [the top](#Spectral-wave-model-of-the-Southern-North-Sea) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | Bathymetry | The bathymetry is based on: <br> 1: the EMODnet Bathymetry Digital Terrain Model (DTM) 2020. <br> 2: Rijkswaterstaat’s bathymetric measurements along the Dutch coasts <br> 3: FUGRO’s bathymetric measurements at the HKZ, HKN and HKW wind farm zones <br> 4: MMT SWEDEN AB’s bathymetric survey for the TNW wind farm zone <br> 5: GEOxyz’s bathymetric survey of IJmuiden Ver wind farm zone (alpha and beta) <br> 6: FUGRO’s bathymetric survey of IJmuiden Ver Wind Farm Zone (gamma). <br>The bathymetry data is interpolated onto the mesh. | 1: EMODnet Bathymetry Consortium (2020). EMODnet Digital Bathymetry (DTM 2020).EMODnet Bathymetry Consortium [https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a](https://doi.org/10.12770/bb6a87dd-e579-4036-abe1-e649cea9881a) <br>For the rest, more information can be found in: DHI, "Metocean Assessment Modelling Report, IJmuiden Ver Wind Farm Zone", Dec 2023, URL: [https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf) (accessed: 2024-11-13) | The data has been interpolated to the mesh resolution such that the original resolution is no longer represented nor reproduceable from the attached mesh. Hence, the mesh with the depth estimates is shared under the same licence as the rest of this repository, namely [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en). |
 | Wind and Air pressure | A subsampled version of the high-resolution ERA5+Weather Research & Forecasting model (WRF) data used for the [RVO project](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf). The data is subsampled in space to 16km and temporally to hourly data. Air pressure is provided, but not required for the SW model. It is included because it is necessary for the HD model, which generated AreaHD, that is an input to the SW model. | Repository citation, see [the top](#Spectral-wave-model-of-the-Southern-North-Sea). | Only non-commercial use: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en). |
 | Boundary condition | The boundary conditions are represented by a 36x36 matrix describing the spectral energy across both direction and magnitude. The data is temporally downsampled to hourly data. | Repository citation, see [the top](#Spectral-wave-model-of-the-Southern-North-Sea).  | Only non-commercial use: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en). |
+
+
+
+## Observation data
+
+The observational data come from in-situ measurement stations provided by the Copernicus Marine Service (CMEMS).
+These near real-time ocean observations, including parameters such as significant wave height, peak wave period and mean wave direction, were accessed through the CMEMS open download service and cover the period 2022–2023.
+
+| Data   | Source|  Citation | License | 
+| -------- | ------- | ------- | ------- |
 | Measurement stations | Data from the stations is retrieved through the [Copernicus Marine Service (CMEMS, or Copernicus Marine Environmental Monitoring Service)](https://www.copernicus.eu/en/copernicus-services/marine). More specifically, the open download service dashboard, which can be found [here](https://marineinsitu.eu/dashboard/). The physical parameter list can be found [here](https://archimer.ifremer.fr/doc/00422/53381/108477.pdf). | Copernicus Marine Service, "Global Ocean In-Situ Near Real-Time Observations", [https://doi.org/10.48670/moi-00036](https://doi.org/10.48670/moi-00036) (accessed: 2025-09-16). | See full license [here](https://marine.copernicus.eu/user-corner/service-commitments-and-licence). Excerpt: "The Licensee is hereby granted a worldwide, non exclusive, royalty free, perpetual licence, (subject to the terms and conditions of this agreement) to: (a) make and use such reasonable copies of Copernicus Marine Service Products for internal use and back up purposes; (b) modify, adapt, develop, create and distribute Value Added Products or Derivative Work from Copernicus Marine Service Products for any purpose; (c) redistribute, disseminate any Copernicus Marine Service Product in their original form via any media." |
 
 
-### Altimetry data
+## Altimetry data
 
 The altimetry data is based on satellite observations and was downloaded via [DHI's services for marine observation data](https://altimetry.dhigroup.com/). The satellites and data sources are listed below:
 

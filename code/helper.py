@@ -18,14 +18,14 @@ def get_swh_point_obs(obs_fldr, meas_fldr, station_file):
     for i, row in df_stn.iterrows():
         df = pd.read_csv(meas_fldr + f"{i}.csv", index_col=0)
         df.index = pd.to_datetime(df.index, format="ISO8601")
-        o = ms.PointObservation(df.VHM0, x=row['lon'], y=row['lat'], name=i, quantity=q)
+        o = ms.PointObservation(df.significant_wave_height, x=row['lon'], y=row['lat'], name=i, quantity=q)
         swhlist.append(o)
 
     return swhlist
 
 def get_tp_point_obs(obs_fldr, meas_fldr, station_file):
     """Get wave period point observations as list of PointObservation objects"""
-    q = ms.Quantity(name="Wave period", unit="s")
+    q = ms.Quantity(name="Peak wave period", unit="s")
     tplist = []
 
     df_stn = pd.read_csv(obs_fldr + station_file, index_col=0)
@@ -35,10 +35,10 @@ def get_tp_point_obs(obs_fldr, meas_fldr, station_file):
                 continue
             df = pd.read_csv(meas_fldr + f"{i}.csv", index_col=0)
             df.index = pd.to_datetime(df.index, format="ISO8601")
-            # Check that VTPK column exists
-            if 'VTPK' not in df.columns:
+            # Check that peak wave period column exists
+            if 'peak_wave_period' not in df.columns:
                 continue
-            o = ms.PointObservation(df, item='VTPK', x=row['lon'], y=row['lat'], name=i, quantity=q, aux_items='VHM0')
+            o = ms.PointObservation(df, item='peak_wave_period', x=row['lon'], y=row['lat'], name=i, quantity=q, aux_items='significant_wave_height')
             tplist.append(o)
     return tplist
 
@@ -54,10 +54,10 @@ def get_mwd_point_obs(obs_fldr, meas_fldr, station_file):
                 continue
             df = pd.read_csv(meas_fldr + f"{i}.csv", index_col=0)
             df.index = pd.to_datetime(df.index, format="ISO8601")
-            # Check is VMDR column exists
-            if 'VMDR' not in df.columns:
+            # Check is mean wave direction column exists
+            if 'mean_wave_direction' not in df.columns:
                 continue
-            o = ms.PointObservation(df.VMDR, x=row['lon'], y=row['lat'], name=i, quantity=q)
+            o = ms.PointObservation(df.mean_wave_direction, x=row['lon'], y=row['lat'], name=i, quantity=q)
             mwdlist.append(o)
 
     return mwdlist

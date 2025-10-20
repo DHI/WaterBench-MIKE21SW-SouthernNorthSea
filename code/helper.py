@@ -5,10 +5,10 @@ import pandas as pd
 import modelskill as ms
 
 obs_fldr = "../observations/"
-alt_fldr = "../observations/altimetry/"
 meas_fldr = "../observations/measurements/"
+alt_fldr = "../observations/altimetry/"
 
-def get_swh_point_obs(obs_fldr, meas_fldr, station_file):
+def get_swh_point_obs(station_file):
     """Get wave height point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Significant Wave Height", unit="meter")
     swhlist = []
@@ -23,7 +23,7 @@ def get_swh_point_obs(obs_fldr, meas_fldr, station_file):
 
     return swhlist
 
-def get_tp_point_obs(obs_fldr, meas_fldr, station_file):
+def get_tp_point_obs(station_file):
     """Get wave period point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Peak wave period", unit="s")
     tplist = []
@@ -42,7 +42,7 @@ def get_tp_point_obs(obs_fldr, meas_fldr, station_file):
             tplist.append(o)
     return tplist
 
-def get_mwd_point_obs(obs_fldr, meas_fldr, station_file):
+def get_mwd_point_obs(station_file):
     """Get wave period point observations as list of PointObservation objects"""
     q = ms.Quantity(name="Mean wave direction", unit="degree", is_directional=True)
     mwdlist = []

@@ -26,6 +26,9 @@ copernicus_utils.py
 .feedback
 .lit
 
+# Notebook for publishing
+__publish__.ipynb
+
 # Notebook for downloading altimetry data
 __download_altimetry_data__.ipynb
 

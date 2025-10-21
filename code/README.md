@@ -12,19 +12,25 @@ The code folder is organized in the following way
     + Link: [`explore_observation_data`](explore_observation_data.ipynb)
     + Notebook for loading and inspecting **observation datasets** (e.g., buoy or station data).  
 - model_validation_altimetry.ipynb
-    + Link: ['model_validation_altimetry'](model_validation_altimetry.ipynb)
+    + Link: [`model_validation_altimetry`](model_validation_altimetry.ipynb)
     + Notebook validating model results against **satellite altimetry observations**.  
-- model_validation_period_and_direction.ipynb
-    + Link: ['model_validation_period_and_direction'](model_validation_period_and_direction.ipynb)
-    + Notebook for model validation of **wave period and direction**.  
+- model_validation_wave_direction.ipynb
+    + Link: [`model_validation_period_and_direction`](model_validation_wave_direction.ipynb)
+    + Notebook for model validation of **mean wave direction**.  
 - model_validation_wave_heigt.ipynb
-    + Link: ['model_validation_wave_height'](model_validation_wave_height.ipynb)
-    + Notebook validating model results against observations of **significant wave height (Hs)**.  
+    + Link: [`model_validation_wave_height`](model_validation_wave_height.ipynb)
+    + Notebook validating model results against observations of **significant wave height**.  
+- model_validation_period_and_direction.ipynb
+    + Link: [`model_validation_wave_period`](model_validation_wave_period.ipynb)
+    + Notebook for model validation of **peak wave period**.  
+- helper.py
+    + Link: [`helper`](helper.py)
+    + Python helper module with utility functions for data processing and analysis.
 - plotting.py
-    + Link: ['plotting'](plotting.py)
+    + Link: [`plotting`](plotting.py)
     + Python plotting module with helper functions for visualizing data.  
 - requirements.txt
-    + Link: ['requirements'](requirements.txt)
+    + Link: [`requirements`](requirements.txt)
     + Python dependencies required to run the notebooks and scripts.  
 
 
@@ -34,14 +40,11 @@ Python 3.12.10
 
 Library | Version
 --- | ---
-modelskill | 1.2.0
-mikeio | 2.4.0
-matplotlib | 3.10.1
-pandas | 2.2.3
-mikecore | 0.2.2
-numpy | 2.2.4
-scipy | 1.15.2
-xarray | 2025.3.0
 ipykernel | 6.29.5
+matplotlib | 3.10.3
+mikeio | 2.6.0
+modelskill | 1.2.0
+numpy | 2.2.6
+pandas | 2.2.3
 
-[`requirements.txt`](requirements.txt) contains the list of libraries and their versions used in the notebooks (excluding jupyter).
+The file [`requirements.txt`](requirements.txt) contains the list of libraries and their versions used in the notebooks.

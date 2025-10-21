@@ -37,6 +37,7 @@ The repository is organized in the following way
     + meteorological forcing (wind)
     + boundary conditions (spectral wave energy density)
     + mesh file (.mesh)
+    + area file with water levels and currents (.dfsu)
 - observations
     + csv files containing observational data for model validation
 - code
@@ -58,7 +59,7 @@ Separately from the current repository, you can find the output zip file (in Zen
 
 This folder contains data for a MIKE 21 Spectral Wave Model flexible mesh simulation in the southern part of the North Sea. The model domain spans from the English Channel along the southern and eastern English coast, part of the northern French coast, and the coasts of Belgium, the Netherlands, northwest Germany, and southwest Denmark.
 
-This model setup and dataset represent a simplified version of the work performed by DHI for the Rijksdienst voor Ondernemend Nederland (RVO). In that work, DHI provides metocean condition predictions for the IJmuiden Ver (IJB) Offshore Wind Farm Zone. More details are available in the [blogpost here](https://www.dhigroup.com/projects/supporting-successful-dutch-offshore-wind-power-development) or the [scientific report](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf). 
+This model setup and dataset represent a simplified version of the work performed by DHI for the Rijksdienst voor Ondernemend Nederland (RVO). In that work, DHI provides metocean condition predictions for the IJmuiden Ver (IJB) Offshore Wind Farm Zone. More details are available in the [blogpost here](https://www.dhigroup.com/projects/supporting-successful-dutch-offshore-wind-power-development) and the [scientific report](https://offshorewind.rvo.nl/file/download/bfa49f34-f894-4562-882f-eb1a8b7497e9/ijv_20231222-dhi-metocean-modelling.pdf). 
 
 This repository includes 
 

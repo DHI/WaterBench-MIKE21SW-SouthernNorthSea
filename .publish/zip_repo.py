@@ -10,9 +10,10 @@ def zip_repo():
     with zipfile.ZipFile(zip_fn, "w") as z:
         for fn in glob.glob("**/*", recursive=True):
             if (
-                not any([fn.startswith(x) for x in [".", "__", "output\\", "input\AreaHD", "input\Wind", "uv"]] and ".toml" not in fn)
+                not any([fn.startswith(x) for x in [".", "__", "output\\", "input\AreaHD", "input\Wind", "uv"]])
                 and "__" not in fn
                 and "." in fn
+                and ".toml" not in fn
             ):
                 z.write(fn)
             else:

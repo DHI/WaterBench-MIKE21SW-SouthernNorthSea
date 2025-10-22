@@ -1,10 +1,10 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17099654.svg)](https://doi.org/10.5281/zenodo.17099654)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17099653.svg)](https://doi.org/10.5281/zenodo.17099653)
 
 # Spectral wave model of the Southern North Sea
 This README provides practical and background information on the dataset. The dataset can be cited as:
 
 > DHI. (2025). Spectral wave model of the Southern North Sea: MIKE 21 SW model setup, outputs and observation data (1.0) [Data set].
-Zenodo. [https://doi.org/10.5281/zenodo.17099654](https://doi.org/10.5281/zenodo.17099654)
+Zenodo. [https://doi.org/10.5281/zenodo.17099653](https://doi.org/10.5281/zenodo.17099653)
 
 See the [license](license.txt) for details on data usage.
 
@@ -64,7 +64,7 @@ This model setup and dataset represent a simplified version of the work performe
 This repository includes 
 
 * Model setup files, input data, and observation data.
-* Simulation result, wind input data, and the hydrodynamic area input file are available on Zenodo [https://doi.org/10.5281/zenodo.17099654](https://doi.org/10.5281/zenodo.17099654).
+* Simulation result, wind input data, and the hydrodynamic area input file are available on Zenodo [https://doi.org/10.5281/zenodo.17099653](https://doi.org/10.5281/zenodo.17099653).
 
 The dataset covers the period 2022-01-01 to 2023-12-31. Since the simulation includes a spin-up period, it is recommended to discard the first two days of result data for analysis.
 
@@ -94,7 +94,7 @@ The model outputs are provided both as point timeseries (dfs0) and as time-varyi
 | Zero crossing period | second | T02 |
 | Mean wave direction | degree | Mdir |
 
-These results are provided as a separate file on [Zenodo](https://doi.org/10.5281/zenodo.17099654). After running a simulation, a log file is generated. For the benchmark simulation, this log file is available in the [/model](/model) folder and contains details on parameter settings and runtime.
+These results are provided as a separate file on [Zenodo](https://doi.org/10.5281/zenodo.17099653). After running a simulation, a log file is generated. For the benchmark simulation, this log file is available in the [/model](/model) folder and contains details on parameter settings and runtime.
 
 Running the MIKE software requires a license. Read more about [obtaining a license](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing) and about [academic licensing](https://www.dhigroup.com/technologies/mikepoweredbydhi/pricing/academic-licenses). If you already have a license, read the [step-by-step guide](https://manuals.mikepoweredbydhi.help/latest/Coast_and_Sea/MIKE_FM_HD_Step_By_Step.pdf) to learn how to run simulations.
 

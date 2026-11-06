@@ -6,7 +6,7 @@ This README provides practical and background information on the dataset. The da
 > DHI. (2025). Spectral wave model of the Southern North Sea: MIKE 21 SW model setup, outputs and observation data (1.0) [Data set].
 Zenodo. [https://doi.org/10.5281/zenodo.17099653](https://doi.org/10.5281/zenodo.17099653)
 
-See the [license](license.txt) for details on data usage.
+See the [license](LICENSE) for details on data usage.
 
 > ⚠️ **Important Disclaimer**  
 > This model setup is a **highly simplified version** of a hindcast model developed by DHI. The mesh has been reduced from over **80,000** to approximately **8,000 elements**, and input data is coarser in both time and space. As a result, model accuracy is lower — e.g., typical RMSE for significant wave heights increases from ~20 cm to **30 cm**.
